@@ -49,17 +49,17 @@ public class Level_03_Register_Login_Page_Object {
 		registerPage = new RegisterPageObject(driver);
 
 		registerPage.clickToGenderMaleRadioButton();
-		registerPage.senkeyToFirstNameTextbox(firstName);
-		registerPage.senkeyToLastNameTextbox(lastName);
+		registerPage.sendkeyToFirstNameTextbox(firstName);
+		registerPage.sendkeyToLastNameTextbox(lastName);
 		
 		registerPage.selectDayDropdown("21");
 		registerPage.selectMonthDropdown("August");
 		registerPage.selectYearDropdown("1996");
 		
-		registerPage.senkeyToEmailextbox(email);
-		registerPage.senkeyToCompanyTextbox(company);
-		registerPage.senkeyToPasswordTextbox(password);
-		registerPage.senkeyToConfirmPasswordTextbox(password);
+		registerPage.sendkeyToEmailextbox(email);
+		registerPage.sendkeyToCompanyTextbox(company);
+		registerPage.sendkeyToPasswordTextbox(password);
+		registerPage.sendkeyToConfirmPasswordTextbox(password);
 
 		registerPage.clickToRegisterButton();
 		
