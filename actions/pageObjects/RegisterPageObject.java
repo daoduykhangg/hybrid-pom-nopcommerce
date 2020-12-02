@@ -13,6 +13,7 @@ public class RegisterPageObject extends AbstractPage {
 	}
 
 	public void clickToGenderMaleRadioButton() {
+//		waitForElementVisible(driver, RegisterPageUI.GENDER_MALE_RADIO);
 		waitForElementClickable(driver, RegisterPageUI.GENDER_MALE_RADIO);
 		clickToElement(driver, RegisterPageUI.GENDER_MALE_RADIO);
 	}

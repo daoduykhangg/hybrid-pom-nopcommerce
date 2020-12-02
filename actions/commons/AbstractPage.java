@@ -104,13 +104,20 @@ public class AbstractPage {
 	}
 	
 	public void clickToElement(WebDriver driver,String locator) {
+		if(driver.toString().contains("edge")) {
+			sleepInMiliSecond(500);
+		}
 		element = getElement(driver, locator);
 		element.click();
 	}
 	
 	public void sendkeyToElement(WebDriver driver, String locator, String value) {
+		
 		element = getElement(driver, locator);
 		element.clear();
+		if(driver.toString().contains("chrome") | driver.toString().contains("edge")) {
+			sleepInMiliSecond(500);
+		}
 		element.sendKeys(value);
 	}
 	
@@ -157,6 +164,14 @@ public class AbstractPage {
 	public void sleepInSecond(long timeout) {
 		try {
 			Thread.sleep(timeout * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void sleepInMiliSecond(long timeout) {
+		try {
+			Thread.sleep(timeout);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
-public class Level_03_Register_Login_Page_Object extends AbstractPage{
+public class Level_03_Register_Login_Page_Object {
 	WebDriver driver;
 	Select select;
 	String projectFolder = System.getProperty("user.dir");
@@ -29,7 +29,7 @@ public class Level_03_Register_Login_Page_Object extends AbstractPage{
 	public void beforeTest() {
 		System.setProperty("webdriver.gecko.driver", projectFolder + "\\browserDriver\\geckodriver.exe");
 		driver = new FirefoxDriver();
-		openPageUrl(driver, "https://demo.nopcommerce.com/");
+		driver.get("https://demo.nopcommerce.com/");
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
