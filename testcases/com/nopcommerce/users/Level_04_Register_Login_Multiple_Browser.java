@@ -1,7 +1,6 @@
 package com.nopcommerce.users;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,7 +15,7 @@ import pageObjects.RegisterPageObject;
 
 public class Level_04_Register_Login_Multiple_Browser extends AbstractTest{
 	WebDriver driver;
-	Select select;
+	//Select select;
 	String firstName, lastName, email, company, password;
 
 	@Parameters("browser")
@@ -38,17 +37,17 @@ public class Level_04_Register_Login_Multiple_Browser extends AbstractTest{
 		registerPage = new RegisterPageObject(driver);
 
 		registerPage.clickToGenderMaleRadioButton();
-		registerPage.senkeyToFirstNameTextbox(firstName);
-		registerPage.senkeyToLastNameTextbox(lastName);
+		registerPage.sendkeyToFirstNameTextbox(firstName);
+		registerPage.sendkeyToLastNameTextbox(lastName);
 
 		registerPage.selectDayDropdown("21");
 		registerPage.selectMonthDropdown("August");
 		registerPage.selectYearDropdown("1996");
 
-		registerPage.senkeyToEmailextbox(email);
-		registerPage.senkeyToCompanyTextbox(company);
-		registerPage.senkeyToPasswordTextbox(password);
-		registerPage.senkeyToConfirmPasswordTextbox(password);
+		registerPage.sendkeyToEmailextbox(email);
+		registerPage.sendkeyToCompanyTextbox(company);
+		registerPage.sendkeyToPasswordTextbox(password);
+		registerPage.sendkeyToConfirmPasswordTextbox(password);
 
 		registerPage.clickToRegisterButton();
 

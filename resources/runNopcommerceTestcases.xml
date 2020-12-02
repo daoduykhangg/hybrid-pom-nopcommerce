@@ -14,24 +14,24 @@
     </classes>
     </test>
     
-    <test name="Run on FIREFOX HEADLESS">
-    <parameter name="browser" value="firefox_headless"/>
-    <classes>
-    <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
-    </classes>
-    </test>
+<!--     <test name="Run on FIREFOX HEADLESS"> -->
+<!--     <parameter name="browser" value="firefox_headless"/> -->
+<!--     <classes> -->
+<!--     <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/> -->
+<!--     </classes> -->
+<!--     </test> -->
     
-    <test name="Run on CHROME HEADLESS">
-    <parameter name="browser" value="chrome_headless"/>
-    <classes>
-      <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
-    </classes>
-    </test>
+<!--     <test name="Run on CHROME HEADLESS"> -->
+<!--     <parameter name="browser" value="chrome_headless"/> -->
+<!--     <classes> -->
+<!--       <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/> -->
+<!--     </classes> -->
+<!--     </test> -->
     
-    <test name="Run on EDGE UI">
-    <parameter name="browser" value="edge_chromium"/>
-    <classes>
-      <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
-    </classes>
-    </test>
+<!--     <test name="Run on EDGE UI"> -->
+<!--     <parameter name="browser" value="edge_chromium"/> -->
+<!--     <classes> -->
+<!--       <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/> -->
+<!--     </classes> -->
+<!--     </test> -->
 </suite> <!-- Suite -->
