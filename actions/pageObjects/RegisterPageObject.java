@@ -13,7 +13,6 @@ public class RegisterPageObject extends AbstractPage {
 	}
 
 	public void clickToGenderMaleRadioButton() {
-//		waitForElementVisible(driver, RegisterPageUI.GENDER_MALE_RADIO);
 		waitForElementClickable(driver, RegisterPageUI.GENDER_MALE_RADIO);
 		clickToElement(driver, RegisterPageUI.GENDER_MALE_RADIO);
 	}
@@ -31,7 +30,6 @@ public class RegisterPageObject extends AbstractPage {
 	public void selectDayDropdown(String day) {
 		waitForElementClickable(driver, RegisterPageUI.DAY_DROPDOWN);
 		selectItemInDropdown(driver, RegisterPageUI.DAY_DROPDOWN, day);
-
 	}
 
 	public void selectMonthDropdown(String month) {
@@ -42,7 +40,6 @@ public class RegisterPageObject extends AbstractPage {
 	public void selectYearDropdown(String year) {
 		waitForElementClickable(driver, RegisterPageUI.YEAR_DROPDOWN);
 		selectItemInDropdown(driver, RegisterPageUI.YEAR_DROPDOWN, year);
-
 	}
 
 	public void sendkeyToEmailextbox(String email) {
@@ -54,19 +51,16 @@ public class RegisterPageObject extends AbstractPage {
 	public void sendkeyToCompanyTextbox(String company) {
 		waitForElementVisible(driver, RegisterPageUI.COMPANY_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.COMPANY_TEXTBOX, company);
-
 	}
 
 	public void sendkeyToPasswordTextbox(String password) {
 		waitForElementVisible(driver, RegisterPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, password);
-
 	}
 
 	public void sendkeyToConfirmPasswordTextbox(String password) {
 		waitForElementVisible(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, RegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, password);
-
 	}
 
 	public void clickToRegisterButton() {
@@ -82,7 +76,6 @@ public class RegisterPageObject extends AbstractPage {
 	public void ClickToLogoutLink() {
 		waitForElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
-
 	}
 
 	public String getFirstNameErrorMessage() {
@@ -114,5 +107,4 @@ public class RegisterPageObject extends AbstractPage {
 		waitForElementVisible(driver, RegisterPageUI.EXIST_EMAIL_MESSAGE);
 		return getTextElement(driver, RegisterPageUI.EXIST_EMAIL_MESSAGE);
 	}
-
 }

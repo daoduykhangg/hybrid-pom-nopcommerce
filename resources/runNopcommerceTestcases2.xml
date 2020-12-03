@@ -3,7 +3,7 @@
   <test name="Run on FIREFOX UI">
  	<parameter name="browser" value="firefox_ui"/>
     <classes>
-    <class name="com.nopcommerce.user.Login"/>
+    <class name="com.nopcommerce.user.Register"/>
     </classes>
     </test>
     
