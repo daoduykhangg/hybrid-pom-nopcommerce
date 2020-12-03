@@ -29,4 +29,9 @@ public class LoginPageObject extends AbstractPage {
 		
 	}
 
+	public String getEmailErrorMessage() {
+		waitForElementVisible(driver, LoginPageUI.EMAIL_ERROR_MESSAGE);
+		return getTextElement(driver, LoginPageUI.EMAIL_ERROR_MESSAGE);
+	}
+
 }

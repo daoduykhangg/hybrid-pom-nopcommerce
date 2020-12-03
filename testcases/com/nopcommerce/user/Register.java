@@ -8,6 +8,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
+import pageObjects.HomePageObject;
 import pageObjects.RegisterPageObject;
 
 public class Register extends AbstractTest {
@@ -19,7 +20,6 @@ public class Register extends AbstractTest {
 	@BeforeTest
 	public void beforeTest(String browserName) {
 		driver = getBrowserDriver(browserName);
-		driver.get("https://demo.nopcommerce.com/register?returnUrl=%2F");
 
 		firstName = "Duy";
 		lastName = "Khang";
@@ -37,6 +37,9 @@ public class Register extends AbstractTest {
 	
 	@Test
 	public void TC_01_Register_Empty_Data() {
+		homePage = new HomePageObject(driver);
+		homePage.clickToRegisterLink();
+		
 		registerPage = new RegisterPageObject(driver);
 		registerPage.clickToRegisterButton();
 
@@ -147,4 +150,5 @@ public class Register extends AbstractTest {
 	}
 
 	RegisterPageObject registerPage;
+	HomePageObject homePage;
 }
