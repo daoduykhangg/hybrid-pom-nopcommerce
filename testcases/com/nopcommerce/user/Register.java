@@ -28,9 +28,9 @@ public class Register extends AbstractTest {
 		year = "1996";
 		email = "duykhang" + getRandomNumber() + "@gmail.com";
 		company = "Duy Khang KMA";
-		password = "Kh@ng123";
+		password = "123123";
 
-		invaidEmail = "duykhangQA";
+		invaidEmail = "duykhangqa";
 		existEmail = "duykhang@gmail.com";
 		invalidPassword = "123";
 	}
