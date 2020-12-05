@@ -14,6 +14,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.AddressesPageObject;
+import pageObjects.CustomerInforPageObject;
+import pageObjects.MyProductReviewPageObject;
+import pageObjects.OrdersPageObject;
+import pageObjects.PageGeneratorManager;
+
+
 public class AbstractPage {
 	public void openPageUrl(WebDriver driver, String url) {
 		driver.get(url);
@@ -364,6 +371,30 @@ public class AbstractPage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
 	}
 
+
+	public AddressesPageObject clickToAddressesLink(WebDriver driver) {
+		waitForElementVisible(driver, AbstractPageUI.ADDRESSES_LINK);
+		clickToElement(driver, AbstractPageUI.ADDRESSES_LINK);
+		return PageGeneratorManager.getAddressesPage(driver);
+	}
+
+	public CustomerInforPageObject clickToCustomerInforLink(WebDriver driver) {
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_INFOR_LINK);
+		clickToElement(driver, AbstractPageUI.CUSTOMER_INFOR_LINK);
+		return PageGeneratorManager.getCustomerInforPage(driver);
+	}
+	
+	public OrdersPageObject clickToOrdersLink(WebDriver driver) {
+		waitForElementVisible(driver, AbstractPageUI.ORDERS_LINK);
+		clickToElement(driver, AbstractPageUI.ORDERS_LINK);
+		return PageGeneratorManager.getOrdersPage(driver);
+	}
+
+	public MyProductReviewPageObject clickToMyProductReviewLink(WebDriver driver) {
+		waitForElementVisible(driver, AbstractPageUI.MY_PRODUCT_REVIEW_LINK);
+		clickToElement(driver, AbstractPageUI.MY_PRODUCT_REVIEW_LINK);
+		return PageGeneratorManager.getMyProductReviewPage(driver);
+	}
 	private WebElement element;
 	private JavascriptExecutor jsExecutor;
 	private WebDriverWait explicitWait;

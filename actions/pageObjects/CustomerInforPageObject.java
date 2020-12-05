@@ -56,5 +56,4 @@ public class CustomerInforPageObject extends AbstractPage {
 		waitForElementVisible(driver, CustomerInforPageUI.NEWSLETTER_CHECKBOX);
 		return isElementSelected(driver, CustomerInforPageUI.NEWSLETTER_CHECKBOX);
 	}
-
 }

@@ -34,7 +34,6 @@ public class HomePageObject extends AbstractPage {
 	public void clickToLoginLink() {
 		waitForElementClickable(driver, loginLink);
 		clickToElement(driver, loginLink);
-
 	}
 
 	public boolean isMyAccountLinkDisplayed() {

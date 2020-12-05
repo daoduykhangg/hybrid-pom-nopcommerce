@@ -37,7 +37,6 @@ public class LoginPageObject extends AbstractPage {
 	public void clickToLoginButton() {
 		waitForElementClickable(driver, loginButton);
 		clickToElement(driver, loginButton);
-		
 	}
 
 }
