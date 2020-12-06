@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import pageObjects.HomePageObject;
+import pageObjects.PageGeneratorManager;
 import pageObjects.RegisterPageObject;
 
 public class Register extends AbstractTest {
@@ -37,10 +38,10 @@ public class Register extends AbstractTest {
 	
 	@Test
 	public void TC_01_Register_Empty_Data() {
-		homePage = new HomePageObject(driver);
-		homePage.clickToRegisterLink();
+		homePage = PageGeneratorManager.getHomePage(driver);
 		
-		registerPage = new RegisterPageObject(driver);
+		registerPage = homePage.clickToRegisterLink();
+		
 		registerPage.clickToRegisterButton();
 
 		Assert.assertEquals(registerPage.getFirstNameErrorMessage(), "First name is required.");
@@ -52,7 +53,7 @@ public class Register extends AbstractTest {
 	
 	@Test
 	public void TC_02_Register_Invalid_Email() {
-		registerPage = new RegisterPageObject(driver);
+//		registerPage = PageGeneratorManager.getRegisterPage(driver);
 
 		registerPage.clickToGenderMaleRadioButton();
 		registerPage.sendkeyToFirstNameTextbox(firstName);
@@ -71,7 +72,7 @@ public class Register extends AbstractTest {
 
 	@Test
 	public void TC_03_Register_Exist_Email() {
-		registerPage = new RegisterPageObject(driver);
+//		registerPage = PageGeneratorManager.getRegisterPage(driver);
 
 		registerPage.clickToGenderMaleRadioButton();
 		registerPage.sendkeyToFirstNameTextbox(firstName);
@@ -90,7 +91,7 @@ public class Register extends AbstractTest {
 
 	@Test
 	public void TC_04_Register_Password_Less_than_6_Characters() {
-		registerPage = new RegisterPageObject(driver);
+//		registerPage = PageGeneratorManager.getRegisterPage(driver);
 
 		registerPage.clickToGenderMaleRadioButton();
 		registerPage.sendkeyToFirstNameTextbox(firstName);
@@ -108,7 +109,7 @@ public class Register extends AbstractTest {
 	
 	@Test
 	public void TC_05_Register_Password_And_Confirm_Password_Not_Match() {
-		registerPage = new RegisterPageObject(driver);
+//		registerPage = PageGeneratorManager.getRegisterPage(driver);
 
 		registerPage.clickToGenderMaleRadioButton();
 		registerPage.sendkeyToFirstNameTextbox(firstName);
@@ -127,7 +128,7 @@ public class Register extends AbstractTest {
 
 	@Test
 	public void TC_06_Register_Valid_Data() {
-		registerPage = new RegisterPageObject(driver);
+//		registerPage = PageGeneratorManager.getRegisterPage(driver);
 
 		registerPage.clickToGenderMaleRadioButton();
 		registerPage.sendkeyToFirstNameTextbox(firstName);

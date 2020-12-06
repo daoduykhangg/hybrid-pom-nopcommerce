@@ -62,8 +62,8 @@ public class Level_04_Register_Login_Multiple_Browser extends AbstractTest{
 		homePage.clickToLoginLink();
 		loginPage = new LoginPageObject(driver);
 
-		loginPage.senkeyToEmailTextbox(email);
-		loginPage.senkeyToPasswordTextbox(password);
+		loginPage.sendkeyToEmailTextbox(email);
+		loginPage.sendkeyToPasswordTextbox(password);
 		loginPage.clickToLoginButton();
 
 		homePage = new HomePageObject(driver);

@@ -12,12 +12,12 @@ public class LoginPageObject extends AbstractPage {
 		this.driver = driver;
 	}
 
-	public void senkeyToEmailTextbox(String email) {
+	public void sendkeyToEmailTextbox(String email) {
 		waitForElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, email);
 	}
 
-	public void senkeyToPasswordTextbox(String password) {
+	public void sendkeyToPasswordTextbox(String password) {
 		waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 		

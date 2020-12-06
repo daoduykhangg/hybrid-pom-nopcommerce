@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import commons.AbstractTest;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.PageGeneratorManager;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -31,10 +32,9 @@ public class Login extends AbstractTest {
 
 	@Test
 	public void TC_01_Login_Empty_Data() {
-		homePage = new HomePageObject(driver);
-		homePage.clickToLoginLink();
+		homePage = PageGeneratorManager.getHomePage(driver);
+		loginPage = homePage.clickToLoginLink();
 
-		loginPage = new LoginPageObject(driver);
 		loginPage.clickToLoginButton();
 
 		Assert.assertEquals(loginPage.getEmailErrorMessage(), "Please enter your email");
@@ -42,9 +42,10 @@ public class Login extends AbstractTest {
 
 	@Test
 	public void TC_02_Login_Invalid_Email() {
-		loginPage = new LoginPageObject(driver);
-		loginPage.senkeyToEmailTextbox(invaidEmail);
-		loginPage.senkeyToPasswordTextbox(password);
+//		loginPage = PageGeneratorManager.getLoginPage(driver);
+		
+		loginPage.sendkeyToEmailTextbox(invaidEmail);
+		loginPage.sendkeyToPasswordTextbox(password);
 		loginPage.clickToLoginButton();
 
 		Assert.assertEquals(loginPage.getEmailErrorMessage(), "Wrong email");
@@ -52,9 +53,10 @@ public class Login extends AbstractTest {
 
 	@Test
 	public void TC_03_Login_Unregistered_Email() {
-		loginPage = new LoginPageObject(driver);
-		loginPage.senkeyToEmailTextbox(unregisteredEmail);
-		loginPage.senkeyToPasswordTextbox(password);
+//		loginPage = PageGeneratorManager.getLoginPage(driver);
+		
+		loginPage.sendkeyToEmailTextbox(unregisteredEmail);
+		loginPage.sendkeyToPasswordTextbox(password);
 		loginPage.clickToLoginButton();
 
 		Assert.assertEquals(loginPage.getErrorMessage(), "Login was unsuccessful. Please correct the errors and try again.\n" + "No customer account found");
@@ -62,8 +64,9 @@ public class Login extends AbstractTest {
 
 	@Test
 	public void TC_04_Login_Valid_Email_Empty_Password() {
-		loginPage = new LoginPageObject(driver);
-		loginPage.senkeyToEmailTextbox(email);
+//		loginPage = PageGeneratorManager.getLoginPage(driver);
+		
+		loginPage.sendkeyToEmailTextbox(email);
 		loginPage.clickToLoginButton();
 
 		Assert.assertEquals(loginPage.getErrorMessage(), "Login was unsuccessful. Please correct the errors and try again.\n" + "The credentials provided are incorrect");
@@ -71,9 +74,10 @@ public class Login extends AbstractTest {
 
 	@Test
 	public void TC_05_Login_Valid_Email_invalid_Password() {
-		loginPage = new LoginPageObject(driver);
-		loginPage.senkeyToEmailTextbox(email);
-		loginPage.senkeyToPasswordTextbox(invalidPassword);
+//		loginPage = PageGeneratorManager.getLoginPage(driver);
+		
+		loginPage.sendkeyToEmailTextbox(email);
+		loginPage.sendkeyToPasswordTextbox(invalidPassword);
 		loginPage.clickToLoginButton();
 		
 		Assert.assertEquals(loginPage.getErrorMessage(), "Login was unsuccessful. Please correct the errors and try again.\n" + "The credentials provided are incorrect");
@@ -81,12 +85,12 @@ public class Login extends AbstractTest {
 
 	@Test
 	public void TC_06_Login_Valid_Email_And_Password() {
-		loginPage = new LoginPageObject(driver);
-		loginPage.senkeyToEmailTextbox(email);
-		loginPage.senkeyToPasswordTextbox(password);
-		loginPage.clickToLoginButton();
+//		loginPage = PageGeneratorManager.getLoginPage(driver);
 		
-		homePage = new HomePageObject(driver);
+		loginPage.sendkeyToEmailTextbox(email);
+		loginPage.sendkeyToPasswordTextbox(password);
+		homePage = loginPage.clickToLoginButton();
+
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 	}

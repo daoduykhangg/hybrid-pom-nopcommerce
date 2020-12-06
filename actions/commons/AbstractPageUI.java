@@ -6,4 +6,5 @@ public class AbstractPageUI {
 	public static final String ORDERS_LINK = "//div[@class='listbox']//a[text()='Orders']";
 	public static final String MY_PRODUCT_REVIEW_LINK = "//div[@class='listbox']//a[text()='My product reviews']";
 
+	public static final String DYNAMIC_LINK = "//div[@class='listbox']//a[text()='%s']";
 }

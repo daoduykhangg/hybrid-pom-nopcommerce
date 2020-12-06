@@ -8,13 +8,16 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
+import pageObjects.AddressesPageObject;
 import pageObjects.CustomerInforPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.MyProductReviewPageObject;
+import pageObjects.OrdersPageObject;
 import pageObjects.PageGeneratorManager;
 import pageObjects.RegisterPageObject;
 
-public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest{
+public class Level_08_Register_Login_Dynamic_Locator extends AbstractTest{
 	WebDriver driver;
 	//Select select;
 	String firstName, lastName, email, company, password;
@@ -87,6 +90,59 @@ public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest
 
 	}
 
+	@Test
+	public void TC_04_Switch_Page() {
+		addressesPage = customerInforPage.clickToAddressesLink(driver);
+		
+		myProductReviewPage = addressesPage.clickToMyProductReviewLink(driver);
+		
+		ordersPage = myProductReviewPage.clickToOrdersLink(driver);
+		
+		myProductReviewPage = ordersPage.clickToMyProductReviewLink(driver);
+		
+		addressesPage = myProductReviewPage.clickToAddressesLink(driver);
+		
+		customerInforPage = addressesPage.clickToCustomerInforLink(driver);	
+	}
+	
+	@Test
+	public void TC_05_Switch_Page_Dynamic_Locator_Solution_01() {
+
+		addressesPage = (AddressesPageObject) customerInforPage.ClickToLinkByPageName(driver, "Addresses");
+		
+		myProductReviewPage = (MyProductReviewPageObject) addressesPage.ClickToLinkByPageName(driver, "My product reviews");
+		
+		ordersPage = (OrdersPageObject) myProductReviewPage.ClickToLinkByPageName(driver, "Orders");
+		
+		myProductReviewPage = (MyProductReviewPageObject) ordersPage.ClickToLinkByPageName(driver, "My product reviews");
+		
+		addressesPage = (AddressesPageObject) myProductReviewPage.ClickToLinkByPageName(driver, "Addresses");
+		
+		customerInforPage = (CustomerInforPageObject) addressesPage.ClickToLinkByPageName(driver, "Customer info");
+		
+	}
+
+	@Test
+	public void TC_06_Switch_Page_Dynamic_Locator_Solution_02() {
+		customerInforPage.ClickToLinkWithPageName(driver, "Addresses");
+		addressesPage = PageGeneratorManager.getAddressesPage(driver);
+		
+		addressesPage.ClickToLinkWithPageName(driver, "My product reviews");
+		myProductReviewPage = PageGeneratorManager.getMyProductReviewPage(driver);
+		
+		myProductReviewPage.ClickToLinkWithPageName(driver, "Orders");
+		ordersPage = PageGeneratorManager.getOrdersPage(driver);
+		
+		ordersPage.ClickToLinkWithPageName(driver, "My product reviews");
+		myProductReviewPage = PageGeneratorManager.getMyProductReviewPage(driver);
+		
+		myProductReviewPage.ClickToLinkWithPageName(driver, "Addresses");
+		addressesPage = PageGeneratorManager.getAddressesPage(driver);
+		
+		addressesPage.ClickToLinkWithPageName(driver, "Customer info");
+		customerInforPage = PageGeneratorManager.getCustomerInforPage(driver);
+	}
+	
 	@AfterTest
 	public void afterTest() {
 		driver.quit();
@@ -96,4 +152,7 @@ public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest
 	RegisterPageObject registerPage;
 	LoginPageObject loginPage;
 	CustomerInforPageObject customerInforPage;
+	AddressesPageObject addressesPage;
+	OrdersPageObject ordersPage;
+	MyProductReviewPageObject myProductReviewPage;
 }

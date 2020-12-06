@@ -64,8 +64,8 @@ public class Level_07_Register_Login_Switch_Page extends AbstractTest{
 	public void TC_02_Login() {
 		loginPage = homePage.clickToLoginLink();
 		
-		loginPage.senkeyToEmailTextbox(email);
-		loginPage.senkeyToPasswordTextbox(password);
+		loginPage.sendkeyToEmailTextbox(email);
+		loginPage.sendkeyToPasswordTextbox(password);
 		homePage = loginPage.clickToLoginButton();
 
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());

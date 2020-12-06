@@ -74,8 +74,8 @@ public class Level_03_Register_Login_Page_Object {
 		homePage.clickToLoginLink();
 		loginPage = new LoginPageObject(driver);
 		
-		loginPage.senkeyToEmailTextbox(email);
-		loginPage.senkeyToPasswordTextbox(password);
+		loginPage.sendkeyToEmailTextbox(email);
+		loginPage.sendkeyToPasswordTextbox(password);
 		loginPage.clickToLoginButton();
 		
 		homePage = new HomePageObject(driver);
