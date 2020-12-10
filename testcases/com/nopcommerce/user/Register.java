@@ -8,9 +8,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.HomePageObject;
+import pageObjects.UserHomePO;
 import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserRegisterPO;
 
 public class Register extends AbstractTest {
 	WebDriver driver;
@@ -38,7 +38,7 @@ public class Register extends AbstractTest {
 	
 	@Test
 	public void TC_01_Register_Empty_Data() {
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		registerPage = homePage.clickToRegisterLink();
 		
@@ -150,6 +150,6 @@ public class Register extends AbstractTest {
 		driver.quit();
 	}
 
-	RegisterPageObject registerPage;
-	HomePageObject homePage;
+	UserRegisterPO registerPage;
+	UserHomePO homePage;
 }

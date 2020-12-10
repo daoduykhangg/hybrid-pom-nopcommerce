@@ -1,6 +1,6 @@
 package pageUIs;
 
-public class AddressesPageUI {
+public class UserAddressesPageUI {
 	public static final String ADD_NEW_BUTTON = "//input[@value='Add new']";
 	public static final String FIRST_NAME_TEXTBOX = "//input[@id='Address_FirstName']";
 	public static final String LAST_NAME_TEXTBOX = "//input[@id='Address_LastName']";

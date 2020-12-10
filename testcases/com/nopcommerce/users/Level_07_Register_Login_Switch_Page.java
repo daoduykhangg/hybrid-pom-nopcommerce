@@ -8,14 +8,14 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.AddressesPageObject;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyProductReviewPageObject;
-import pageObjects.OrdersPageObject;
+import pageObjects.UserAddressesPO;
+import pageObjects.UserCustomerInforPO;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
+import pageObjects.UserMyProductReviewPO;
+import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserRegisterPO;
 
 public class Level_07_Register_Login_Switch_Page extends AbstractTest{
 	WebDriver driver;
@@ -36,7 +36,7 @@ public class Level_07_Register_Login_Switch_Page extends AbstractTest{
 
 	@Test
 	public void TC_01_Register() {
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		registerPage = homePage.clickToRegisterLink();
 		
@@ -116,11 +116,11 @@ public class Level_07_Register_Login_Switch_Page extends AbstractTest{
 		driver.quit();
 	}
 
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInforPageObject customerInforPage;
-	AddressesPageObject addressesPage;
-	OrdersPageObject ordersPage;
-	MyProductReviewPageObject myProductReviewPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInforPO customerInforPage;
+	UserAddressesPO addressesPage;
+	UserOrdersPO ordersPage;
+	UserMyProductReviewPO myProductReviewPage;
 }

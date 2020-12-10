@@ -3,8 +3,8 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
 import pageObjects.PageGeneratorManager;
 
 import org.testng.annotations.BeforeTest;
@@ -32,7 +32,7 @@ public class Login extends AbstractTest {
 
 	@Test
 	public void TC_01_Login_Empty_Data() {
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();
 
 		loginPage.clickToLoginButton();
@@ -100,6 +100,6 @@ public class Login extends AbstractTest {
 		driver.quit();
 	}
 
-	HomePageObject homePage;
-	LoginPageObject loginPage;
+	UserHomePO homePage;
+	UserLoginPO loginPage;
 }

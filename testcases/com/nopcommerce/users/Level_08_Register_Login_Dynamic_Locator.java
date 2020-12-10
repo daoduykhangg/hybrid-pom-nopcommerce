@@ -8,14 +8,14 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.AddressesPageObject;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MyProductReviewPageObject;
-import pageObjects.OrdersPageObject;
+import pageObjects.UserAddressesPO;
+import pageObjects.UserCustomerInforPO;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
+import pageObjects.UserMyProductReviewPO;
+import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserRegisterPO;
 
 public class Level_08_Register_Login_Dynamic_Locator extends AbstractTest{
 	WebDriver driver;
@@ -36,7 +36,7 @@ public class Level_08_Register_Login_Dynamic_Locator extends AbstractTest{
 
 	@Test
 	public void TC_01_Register() {
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		registerPage = homePage.clickToRegisterLink();
 		
@@ -108,39 +108,39 @@ public class Level_08_Register_Login_Dynamic_Locator extends AbstractTest{
 	@Test
 	public void TC_05_Switch_Page_Dynamic_Locator_Solution_01() {
 
-		addressesPage = (AddressesPageObject) customerInforPage.ClickToLinkByPageName(driver, "Addresses");
+		addressesPage = (UserAddressesPO) customerInforPage.ClickToLinkByPageName(driver, "Addresses");
 		
-		myProductReviewPage = (MyProductReviewPageObject) addressesPage.ClickToLinkByPageName(driver, "My product reviews");
+		myProductReviewPage = (UserMyProductReviewPO) addressesPage.ClickToLinkByPageName(driver, "My product reviews");
 		
-		ordersPage = (OrdersPageObject) myProductReviewPage.ClickToLinkByPageName(driver, "Orders");
+		ordersPage = (UserOrdersPO) myProductReviewPage.ClickToLinkByPageName(driver, "Orders");
 		
-		myProductReviewPage = (MyProductReviewPageObject) ordersPage.ClickToLinkByPageName(driver, "My product reviews");
+		myProductReviewPage = (UserMyProductReviewPO) ordersPage.ClickToLinkByPageName(driver, "My product reviews");
 		
-		addressesPage = (AddressesPageObject) myProductReviewPage.ClickToLinkByPageName(driver, "Addresses");
+		addressesPage = (UserAddressesPO) myProductReviewPage.ClickToLinkByPageName(driver, "Addresses");
 		
-		customerInforPage = (CustomerInforPageObject) addressesPage.ClickToLinkByPageName(driver, "Customer info");
+		customerInforPage = (UserCustomerInforPO) addressesPage.ClickToLinkByPageName(driver, "Customer info");
 		
 	}
 
 	@Test
 	public void TC_06_Switch_Page_Dynamic_Locator_Solution_02() {
 		customerInforPage.ClickToLinkWithPageName(driver, "Addresses");
-		addressesPage = PageGeneratorManager.getAddressesPage(driver);
+		addressesPage = PageGeneratorManager.getUserAddressesPage(driver);
 		
 		addressesPage.ClickToLinkWithPageName(driver, "My product reviews");
-		myProductReviewPage = PageGeneratorManager.getMyProductReviewPage(driver);
+		myProductReviewPage = PageGeneratorManager.getUserMyProductReviewPage(driver);
 		
 		myProductReviewPage.ClickToLinkWithPageName(driver, "Orders");
-		ordersPage = PageGeneratorManager.getOrdersPage(driver);
+		ordersPage = PageGeneratorManager.getUserOrdersPage(driver);
 		
 		ordersPage.ClickToLinkWithPageName(driver, "My product reviews");
-		myProductReviewPage = PageGeneratorManager.getMyProductReviewPage(driver);
+		myProductReviewPage = PageGeneratorManager.getUserMyProductReviewPage(driver);
 		
 		myProductReviewPage.ClickToLinkWithPageName(driver, "Addresses");
-		addressesPage = PageGeneratorManager.getAddressesPage(driver);
+		addressesPage = PageGeneratorManager.getUserAddressesPage(driver);
 		
 		addressesPage.ClickToLinkWithPageName(driver, "Customer info");
-		customerInforPage = PageGeneratorManager.getCustomerInforPage(driver);
+		customerInforPage = PageGeneratorManager.getUserCustomerInforPage(driver);
 	}
 	
 	@AfterTest
@@ -148,11 +148,11 @@ public class Level_08_Register_Login_Dynamic_Locator extends AbstractTest{
 		driver.quit();
 	}
 
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInforPageObject customerInforPage;
-	AddressesPageObject addressesPage;
-	OrdersPageObject ordersPage;
-	MyProductReviewPageObject myProductReviewPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInforPO customerInforPage;
+	UserAddressesPO addressesPage;
+	UserOrdersPO ordersPage;
+	UserMyProductReviewPO myProductReviewPage;
 }

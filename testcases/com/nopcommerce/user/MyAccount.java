@@ -3,10 +3,10 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.AddressesPageObject;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
+import pageObjects.UserAddressesPO;
+import pageObjects.UserCustomerInforPO;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
 import pageObjects.PageGeneratorManager;
 
 import org.testng.annotations.BeforeTest;
@@ -47,7 +47,7 @@ public class MyAccount extends AbstractTest {
 
 	@Test
 	public void Pre_Condition() {
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();
 
 		loginPage.sendkeyToEmailTextbox(email);
@@ -81,7 +81,7 @@ public class MyAccount extends AbstractTest {
 		Assert.assertTrue(customerInforPage.isNewsletterCheckboxSelected());
 		
 		customerInforPage.ClickToLinkWithPageName(driver, "Addresses");
-		addressesPage = PageGeneratorManager.getAddressesPage(driver);
+		addressesPage = PageGeneratorManager.getUserAddressesPage(driver);
 	}
 	
 	@Test
@@ -119,8 +119,8 @@ public class MyAccount extends AbstractTest {
 		driver.quit();
 	}
 
-	HomePageObject homePage;
-	LoginPageObject loginPage;
-	CustomerInforPageObject customerInforPage;
-	AddressesPageObject addressesPage;
+	UserHomePO homePage;
+	UserLoginPO loginPage;
+	UserCustomerInforPO customerInforPage;
+	UserAddressesPO addressesPage;
 }

@@ -56,6 +56,45 @@ public class AbstractTest {
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		return driver;
 	}
+	
+	protected WebDriver getBrowserDriver(String browserName, String url) {
+		Browser browser = Browser.valueOf(browserName.toUpperCase());
+		if (browser==Browser.FIREFOX_UI) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		} else if (browser==Browser.CHROME_UI) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			driver = new ChromeDriver(options);
+		} else if (browser==Browser.FIREFOX_HEADLESS) {
+			WebDriverManager.firefoxdriver().setup();
+			FirefoxOptions options = new FirefoxOptions();
+			options.setHeadless(true);
+			driver = new FirefoxDriver(options);
+		} else if (browser==Browser.CHROME_HEADLESS) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new ChromeDriver(options);
+		} else if (browser==Browser.EDGE_CHROMIUM) {
+			WebDriverManager.edgedriver().driverVersion("87.0.666.0").setup();
+			driver = new EdgeDriver();
+		}  else if (browser==Browser.SAFARI) {
+			driver = new SafariDriver();
+		}  else if (browser==Browser.IE) {
+			WebDriverManager.edgedriver().arch32().setup();
+			driver = new InternetExplorerDriver();
+		} else {
+			throw new RuntimeException("Please input valid browser name value!");
+		}
+		driver.get(url);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		return driver;
+	}
 
 	public int getRandomNumber() {
 		Random rand = new Random();

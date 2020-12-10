@@ -15,11 +15,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-import pageObjects.AddressesPageObject;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.MyProductReviewPageObject;
-import pageObjects.OrdersPageObject;
+import pageObjects.UserAddressesPO;
+import pageObjects.UserCustomerInforPO;
+import pageObjects.UserMyProductReviewPO;
+import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
+import pageUIs.AbstractPageUI;
 
 
 public class AbstractPage {
@@ -235,8 +236,22 @@ public class AbstractPage {
 		}
 	}
 	
+	public void checkTheCheckbox(WebDriver driver, String locator, String... values) {
+		element = getElement(driver, getDynamicLocator(locator, values));
+		if(!element.isSelected()) {
+			element.click();
+		}
+	}
+	
 	public void uncheckTheCheckbox(WebDriver driver, String locator) {
 		element = getElement(driver, locator);
+		if(element.isSelected()) {
+			element.click();
+		}
+	}
+	
+	public void uncheckTheCheckbox(WebDriver driver, String locator, String... values) {
+		element = getElement(driver, getDynamicLocator(locator, values));
 		if(element.isSelected()) {
 			element.click();
 		}
@@ -420,28 +435,28 @@ public class AbstractPage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(getDynamicLocator(locator, values))));
 	}
 
-	public AddressesPageObject clickToAddressesLink(WebDriver driver) {
+	public UserAddressesPO clickToAddressesLink(WebDriver driver) {
 		waitForElementVisible(driver, AbstractPageUI.ADDRESSES_LINK);
 		clickToElement(driver, AbstractPageUI.ADDRESSES_LINK);
-		return PageGeneratorManager.getAddressesPage(driver);
+		return PageGeneratorManager.getUserAddressesPage(driver);
 	}
 
-	public CustomerInforPageObject clickToCustomerInforLink(WebDriver driver) {
+	public UserCustomerInforPO clickToCustomerInforLink(WebDriver driver) {
 		waitForElementClickable(driver, AbstractPageUI.CUSTOMER_INFOR_LINK);
 		clickToElement(driver, AbstractPageUI.CUSTOMER_INFOR_LINK);
-		return PageGeneratorManager.getCustomerInforPage(driver);
+		return PageGeneratorManager.getUserCustomerInforPage(driver);
 	}
 	
-	public OrdersPageObject clickToOrdersLink(WebDriver driver) {
+	public UserOrdersPO clickToOrdersLink(WebDriver driver) {
 		waitForElementClickable(driver, AbstractPageUI.ORDERS_LINK);
 		clickToElement(driver, AbstractPageUI.ORDERS_LINK);
-		return PageGeneratorManager.getOrdersPage(driver);
+		return PageGeneratorManager.getUserOrdersPage(driver);
 	}
 
-	public MyProductReviewPageObject clickToMyProductReviewLink(WebDriver driver) {
+	public UserMyProductReviewPO clickToMyProductReviewLink(WebDriver driver) {
 		waitForElementClickable(driver, AbstractPageUI.MY_PRODUCT_REVIEW_LINK);
 		clickToElement(driver, AbstractPageUI.MY_PRODUCT_REVIEW_LINK);
-		return PageGeneratorManager.getMyProductReviewPage(driver);
+		return PageGeneratorManager.getUserMyProductReviewPage(driver);
 	}
 	
 	public AbstractPage ClickToLinkByPageName(WebDriver driver, String pageName) {
@@ -449,19 +464,23 @@ public class AbstractPage {
 		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 		switch (pageName) {
 		case "Addresses":
-			return PageGeneratorManager.getAddressesPage(driver);
+			return PageGeneratorManager.getUserAddressesPage(driver);
 		case "Customer info":
-			return PageGeneratorManager.getCustomerInforPage(driver);
+			return PageGeneratorManager.getUserCustomerInforPage(driver);
 		case "My product reviews":
-			return PageGeneratorManager.getMyProductReviewPage(driver);
+			return PageGeneratorManager.getUserMyProductReviewPage(driver);
 		default:
-			return PageGeneratorManager.getOrdersPage(driver);
+			return PageGeneratorManager.getUserOrdersPage(driver);
 		}
 	}
 	
 	public void ClickToLinkWithPageName(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);	
+	}
+	
+	public void WaitForLoadingIconInvisible(WebDriver driver) {
+		waitForElementInvisible(driver, AbstractPageUI.LOADING_ICON);
 	}
 	
 	private WebElement element;

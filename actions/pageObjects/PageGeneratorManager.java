@@ -3,31 +3,43 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 public class PageGeneratorManager {
-	public static HomePageObject getHomePage(WebDriver driver) {
-		return new HomePageObject(driver);
+	public static UserHomePO getUserHomePage(WebDriver driver) {
+		return new UserHomePO(driver);
 	}
 	
-	public static LoginPageObject getLoginPage(WebDriver driver) {
-		return new LoginPageObject(driver);
+	public static UserLoginPO getUserLoginPage(WebDriver driver) {
+		return new UserLoginPO(driver);
 	}
 	
-	public static RegisterPageObject getRegisterPage(WebDriver driver) {
-		return new RegisterPageObject(driver);
+	public static UserRegisterPO getUserRegisterPage(WebDriver driver) {
+		return new UserRegisterPO(driver);
 	}
 	
-	public static CustomerInforPageObject getCustomerInforPage(WebDriver driver) {
-		return new CustomerInforPageObject(driver);
+	public static UserCustomerInforPO getUserCustomerInforPage(WebDriver driver) {
+		return new UserCustomerInforPO(driver);
 	}
 	
-	public static AddressesPageObject getAddressesPage(WebDriver driver) {
-		return new AddressesPageObject(driver);
+	public static UserAddressesPO getUserAddressesPage(WebDriver driver) {
+		return new UserAddressesPO(driver);
 	}
 	
-	public static OrdersPageObject getOrdersPage(WebDriver driver) {
-		return new OrdersPageObject(driver);
+	public static UserOrdersPO getUserOrdersPage(WebDriver driver) {
+		return new UserOrdersPO(driver);
 	}
 	
-	public static MyProductReviewPageObject getMyProductReviewPage(WebDriver driver) {
-		return new MyProductReviewPageObject(driver);
+	public static UserMyProductReviewPO getUserMyProductReviewPage(WebDriver driver) {
+		return new UserMyProductReviewPO(driver);
+	}
+	
+	public static AdminLoginPagePO getAdminLoginPage(WebDriver driver) {
+		return new AdminLoginPagePO(driver);
+	}
+	
+	public static AdminDashBoardPagePO getAdminDashBoardPage(WebDriver driver) {
+		return new AdminDashBoardPagePO(driver);
+	}
+	
+	public static AdminProductsPagePO getAdminProductsPage(WebDriver driver) {
+		return new AdminProductsPagePO(driver);
 	}
 }

@@ -8,11 +8,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
+import pageObjects.UserCustomerInforPO;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
 import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserRegisterPO;
 
 public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest{
 	WebDriver driver;
@@ -33,7 +33,7 @@ public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest
 
 	@Test
 	public void TC_01_Register() {
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		registerPage = homePage.clickToRegisterLink();
 		
@@ -92,8 +92,8 @@ public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest
 		driver.quit();
 	}
 
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInforPageObject customerInforPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInforPO customerInforPage;
 }
