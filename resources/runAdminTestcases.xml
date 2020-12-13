@@ -12,7 +12,7 @@
     <parameter name="browser" value="chrome_ui"/>
     <parameter name="url" value="https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F"/>
     <classes>
-      <class name="com.nopcommerce.admin.Level_09_Web_Data_Table"/>
+      <class name="com.nopcommerce.admin.Level_10_Upload_File"/>
     </classes>
     </test>
     

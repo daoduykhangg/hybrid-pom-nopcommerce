@@ -215,6 +215,11 @@ public class AbstractPage {
 		return element.getAttribute(attributeName);
 	}
 	
+	public String getElementAttribute(WebDriver driver, String locator, String attributeName, String... values) {
+		element = getElement(driver, getDynamicLocator(locator, values));
+		return element.getAttribute(attributeName);
+	}
+	
 	public String getTextElement(WebDriver driver, String locator) {
 		element = getElement(driver, locator);
 		return element.getText();
@@ -227,6 +232,10 @@ public class AbstractPage {
 	
 	public int countElementNumber(WebDriver driver, String locator) {
 		return getElements(driver, locator).size();
+	}
+	
+	public int countElementNumber(WebDriver driver, String locator, String values) {
+		return getElements(driver, getDynamicLocator(locator, values)).size();
 	}
 	
 	public void checkTheCheckbox(WebDriver driver, String locator) {
@@ -351,11 +360,19 @@ public class AbstractPage {
 		element = getElement(driver, locator);
 		jsExecutor.executeScript("arguments[0].click();", element);
 	}
-
+	
 	public void scrollToElement(WebDriver driver, String locator) {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = getElement(driver, locator);
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+		sleepInSecond(1);
+	}
+
+	public void scrollToElement(WebDriver driver, String locator, String... values) {
+		jsExecutor = (JavascriptExecutor) driver;
+		element = getElement(driver, getDynamicLocator(locator, values));
+		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+		sleepInSecond(1);
 	}
 
 	public void sendkeyToElementByJS(WebDriver driver, String locator, String value) {
@@ -481,6 +498,24 @@ public class AbstractPage {
 	
 	public void WaitForLoadingIconInvisible(WebDriver driver) {
 		waitForElementInvisible(driver, AbstractPageUI.LOADING_ICON);
+	}
+	
+	public void openToPanelByPanelID(WebDriver driver, String panelID) {
+		waitForElementClickable(driver, AbstractPageUI.PANEL_STATUS_BY_PANEL_ID, panelID);
+		String panel_Status = getElementAttribute(driver, AbstractPageUI.PANEL_STATUS_BY_PANEL_ID, "class", panelID);
+		if(!panel_Status.contains("opened")) {
+			clickToElement(driver, AbstractPageUI.PANEL_STATUS_BY_PANEL_ID, panelID);
+		}
+	}
+	
+	public void uploadMultipleFiles(WebDriver driver,String panelID, String... fileNames) {
+		String filePath = GlobalConstants.UPLOAD_FOLDER;
+		String fullFileName = "";
+		for (String file : fileNames) {
+			fullFileName = fullFileName + filePath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		getElement(driver, getDynamicLocator(AbstractPageUI.UPLOAD_FILE_BY_PANELID_BUTTON, panelID)).sendKeys(fullFileName);
 	}
 	
 	private WebElement element;

@@ -45,7 +45,6 @@ public class Level_09_Web_Data_Table extends AbstractTest {
 		Assert.assertTrue(productsPage.isPageActivedAtTableByIndex("1"));
 	}
 
-	@Test
 	public void TC_02_Select_Deselect_All() {
 		productsPage.checkToSelectAllCheckbox();
 		productsPage.sleepInSecond(1);
@@ -68,15 +67,41 @@ public class Level_09_Web_Data_Table extends AbstractTest {
 	}
 
 	@Test
-	public void TC_03_Pagging() {
+	public void TC_03_Displayed_All() {
+		Assert.assertTrue(productsPage.areProductDetailDisplayed("Adobe Photoshop CS4", "Adobe Photoshop CS4", "AD_CS4_PH", "75", "10000", "Simple", "true"));
+		Assert.assertTrue(productsPage.areProductDetailDisplayed("Apple iCam", "Apple iCam", "APPLE_CAM", "1300", "10000", "Simple", "true"));
+		Assert.assertTrue(productsPage.areProductDetailDisplayed("Apple MacBook Pro 13-inch", "Apple MacBook Pro 13-inch", "AP_MBP_13", "1800", "10000", "Simple", "true"));
+		
+		productsPage.selectNumberItemDropdown("50");
+		Assert.assertTrue(productsPage.areProductDetailDisplayed("Windows 8 Pro", "Windows 8 Pro", "MS_WIN_8P", "65", "10000", "Simple", "false"));
+	}
+
+
+	public void TC_04_Edit() {
+		productsPage.clickToEditButtonByProductName("Adobe Photoshop CS4");
+		productsPage.backToPage(driver);
+		
+		productsPage.clickToEditButtonByProductName("Apple iCam");
+		productsPage.backToPage(driver);
+		
+		productsPage.selectNumberItemDropdown("50");
+		productsPage.clickToEditButtonByProductName("Windows 8 Pro");
+		productsPage.backToPage(driver);
+		
 
 	}
 
 	@Test
-	public void TC_04_Pagging() {
+	public void TC_05_Position() {
+		Assert.assertTrue(productsPage.isInformationDisplayedAtColumnNameAndRowNumber("Product name", "1", "$100 Physical Gift Card"));
+		Assert.assertTrue(productsPage.isInformationDisplayedAtColumnNameAndRowNumber("SKU", "1", "PG_CR_100"));
+		Assert.assertTrue(productsPage.isInformationDisplayedAtColumnNameAndRowNumber("Price", "1", "100"));
+		Assert.assertTrue(productsPage.isInformationDisplayedAtColumnNameAndRowNumber("Stock quantity", "1", ""));
+		Assert.assertTrue(productsPage.isInformationDisplayedAtColumnNameAndRowNumber("Product type", "1", "Simple"));
 
+		Assert.assertTrue(productsPage.isPublicStatusAtColumnNameAndRowNumber("Published", "1", "true"));
 	}
-
+	
 	@AfterTest
 	public void afterTest() {
 		driver.quit();
