@@ -31,6 +31,10 @@ public class PageGeneratorManager {
 		return new UserMyProductReviewPO(driver);
 	}
 	
+	public static UserChangePasswordPagePO getUserChangePasswordPage(WebDriver driver) {
+		return new UserChangePasswordPagePO(driver);
+	}
+	
 	public static AdminLoginPagePO getAdminLoginPage(WebDriver driver) {
 		return new AdminLoginPagePO(driver);
 	}

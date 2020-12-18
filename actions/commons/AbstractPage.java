@@ -1,7 +1,9 @@
 package commons;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -270,6 +272,27 @@ public class AbstractPage {
 		return getElement(driver, locator).isDisplayed();
 	}
 	
+	public boolean isElementUndisplayed(WebDriver driver, String locator) {
+//		System.out.println("Start time = " + new Date().toString());
+		overideImplicitWait(driver, GlobalConstants.SHORT_TIMEOUT);
+		elements = getElements(driver, locator);
+		overideImplicitWait(driver, GlobalConstants.LONG_TIMEOUT);
+		
+		if(elements.size() == 0) {
+//			System.out.println("Element is Undisplayed and NOT in DOM");
+//			System.out.println("End time = " + new Date().toString());
+			return true;
+		}else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
+//			System.out.println("Element is Undisplayed and in DOM");
+//			System.out.println("End time = " + new Date().toString());
+			return true;
+		}else {
+//			System.out.println("Element is Displayed and in DOM");
+//			System.out.println("End time = " + new Date().toString());
+			return false;
+		}
+	}
+	
 	public boolean isElementDisplayed(WebDriver driver, String locator, String... values) {
 		return getElement(driver, getDynamicLocator(locator, values)).isDisplayed();
 	}
@@ -433,8 +456,18 @@ public class AbstractPage {
 	}
 	
 	public void waitForElementInvisible(WebDriver driver, String locator) {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		explicitWait = new WebDriverWait(driver, GlobalConstants.SHORT_TIMEOUT);
+		overideImplicitWait(driver, GlobalConstants.SHORT_TIMEOUT);
+		
+//		System.out.println("Start time for wait invisible = " + new Date().toString());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+//		System.out.println("End time for wait invisible = " + new Date().toString());
+		
+		overideImplicitWait(driver, GlobalConstants.LONG_TIMEOUT);		
+	}
+	
+	public void overideImplicitWait(WebDriver driver, long timeInSecond) {
+		driver.manage().timeouts().implicitlyWait(timeInSecond, TimeUnit.SECONDS);
 	}
 	
 	public void waitForElementInvisible(WebDriver driver, String locator, String... values) {

@@ -4,9 +4,11 @@ import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import pageObjects.UserAddressesPO;
+import pageObjects.UserChangePasswordPagePO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
+import pageUIs.UserHomePageUI;
 import pageObjects.PageGeneratorManager;
 
 import org.testng.annotations.BeforeTest;
@@ -17,7 +19,7 @@ import org.testng.annotations.AfterTest;
 
 public class MyAccount extends AbstractTest {
 	WebDriver driver;
-	String email, password;
+	String email, password, newPassword;
 	String date, month, year, company;
 	String firstName, lastName, counTry, state, city, address1, address2, zip, phoneNumber, faxNumber;
 
@@ -27,7 +29,8 @@ public class MyAccount extends AbstractTest {
 		driver = getBrowserDriver(browserName);
 
 		email = "duykhang@gmail.com";
-		password = "123123";
+		password = "222222";
+		newPassword = "333333";
 
 		firstName = "Automation";
 		lastName = "FC";
@@ -79,15 +82,15 @@ public class MyAccount extends AbstractTest {
 		Assert.assertEquals(customerInforPage.getEmailTextboxValue(), email);
 		Assert.assertEquals(customerInforPage.getCompanyTextboxValue(), company);
 		Assert.assertTrue(customerInforPage.isNewsletterCheckboxSelected());
-		
+
 		customerInforPage.ClickToLinkWithPageName(driver, "Addresses");
 		addressesPage = PageGeneratorManager.getUserAddressesPage(driver);
 	}
-	
+
 	@Test
 	public void TC_02_Addresses() {
 		addressesPage.ClickToAddNewButton();
-		
+
 		addressesPage.sendkeyToFirstNameTextbox(firstName);
 		addressesPage.sendkeyToLastNameTextbox(lastName);
 		addressesPage.sendkeyToEmailTextbox(email);
@@ -102,7 +105,7 @@ public class MyAccount extends AbstractTest {
 		addressesPage.sendkeyToFaxNumberTextbox(faxNumber);
 
 		addressesPage.ClickToSaveButton();
-		
+
 		Assert.assertEquals(addressesPage.getNameValue(), firstName + " " + lastName);
 		Assert.assertEquals(addressesPage.getEmailValue(), "Email: " + email);
 		Assert.assertEquals(addressesPage.getPhoneNumberValue(), "Phone number: " + phoneNumber);
@@ -110,10 +113,43 @@ public class MyAccount extends AbstractTest {
 		Assert.assertEquals(addressesPage.getCompanyValue(), company);
 		Assert.assertEquals(addressesPage.getAddress1Value(), address1);
 		Assert.assertEquals(addressesPage.getAddress2Value(), address2);
-		Assert.assertEquals(addressesPage.getCityStateZipValue(), city+ ", " + zip);
+		Assert.assertEquals(addressesPage.getCityStateZipValue(), city + ", " + zip);
 		Assert.assertEquals(addressesPage.getCounTryValue(), counTry);
+
 	}
 	
+	@Test
+	public void TC_03_Change_Password() {
+		addressesPage.ClickToLinkByPageName(driver, "Change password");
+		changePasswordPage = PageGeneratorManager.getUserChangePasswordPage(driver);
+
+		changePasswordPage.inputToOldPasswordTextbox(password);
+		changePasswordPage.inputToNewPasswordTextbox(newPassword);
+		changePasswordPage.inputToConfirmPasswordTextbox(newPassword);
+		changePasswordPage.clickToChangePasswordButton();
+		Assert.assertEquals(changePasswordPage.getTextResultOfChangePassword(), "Password was changed");
+
+		homePage = changePasswordPage.ClickToLogoutLink();
+		loginPage = homePage.clickToLoginLink();
+		loginPage.sendkeyToEmailTextbox(email);
+		loginPage.sendkeyToPasswordTextbox(password);
+		loginPage.clickToLoginButton();
+
+		Assert.assertEquals(loginPage.getErrorMessage(), "Login was unsuccessful. Please correct the errors and try again.\n" + "The credentials provided are incorrect");
+		loginPage.sleepInSecond(5);
+		loginPage.sendkeyToPasswordTextbox(newPassword);
+		homePage = loginPage.clickToLoginButton();
+
+		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+	}
+
+	@Test
+	public void TC_04_My_Product_Reviews() {
+		homePage.scrollToElement(driver, UserHomePageUI.ITEM_LINK_BY_PRODUCT_NAME, "Build your own computer");
+		homePage.clickToItemLinkByProductName("Build your own computer");
+	}
+
 	@AfterTest
 	public void afterTest() {
 		driver.quit();
@@ -123,4 +159,5 @@ public class MyAccount extends AbstractTest {
 	UserLoginPO loginPage;
 	UserCustomerInforPO customerInforPage;
 	UserAddressesPO addressesPage;
+	UserChangePasswordPagePO changePasswordPage;
 }
