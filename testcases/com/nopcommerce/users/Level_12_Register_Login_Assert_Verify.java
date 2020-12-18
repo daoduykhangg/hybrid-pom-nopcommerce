@@ -1,7 +1,6 @@
 package com.nopcommerce.users;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -17,7 +16,7 @@ import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 
-public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest{
+public class Level_12_Register_Login_Assert_Verify extends AbstractTest{
 	WebDriver driver;
 	//Select select;
 	String firstName, lastName, email, company, password;
@@ -37,8 +36,9 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest{
 	@Test
 	public void TC_01_Register() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
-		Assert.assertTrue(homePage.isRegisterLinkDisplayed());
-		Assert.assertFalse(homePage.isLoginLinkDisplayed());
+		//Failed
+		verifyFalse(homePage.isRegisterLinkDisplayed());
+		verifyFalse(homePage.isLoginLinkDisplayed());
 		
 		registerPage = homePage.clickToRegisterLink();
 		
@@ -56,8 +56,8 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest{
 		registerPage.sendkeyToConfirmPasswordTextbox(password);
 
 		registerPage.clickToRegisterButton();
-
-		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+		//Failed
+		verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed...");
 
 		homePage = registerPage.ClickToLogoutLink();
 	}
@@ -69,13 +69,13 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest{
 		loginPage.sendkeyToEmailTextbox(email);
 		loginPage.sendkeyToPasswordTextbox(password);
 		homePage = loginPage.clickToLoginButton();
-
-		Assert.assertFalse(homePage.isMyAccountLinkDisplayed());
-		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 		
-		Assert.assertTrue(homePage.isRegisterLinkUndisplayed());
-		Assert.assertTrue(homePage.isLoginLinkUndisplayed());
-		Assert.assertTrue(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		verifyFalse(homePage.isMyAccountLinkDisplayed());
+		verifyFalse(homePage.isLogoutLinkDisplayed());
+		
+		verifyTrue(homePage.isRegisterLinkUndisplayed());
+		verifyTrue(homePage.isLoginLinkUndisplayed());
+		verifyFalse(homePage.isShoppingCartNoItemTooltipUndisplayed());
 	}
 
 	@AfterTest
