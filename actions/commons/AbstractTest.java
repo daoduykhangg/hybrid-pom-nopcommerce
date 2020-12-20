@@ -21,11 +21,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AbstractTest {
 	private WebDriver driver;
-	// Init log
+	//Define log variable
 	protected final Log log;
 
 	// Constructor
 	protected AbstractTest() {
+		// Init log
 		log = LogFactory.getLog(getClass());
 	}
 	
@@ -112,6 +113,10 @@ public class AbstractTest {
 		return rand.nextInt(999999);
 	}
 
+	public WebDriver getDriver() {
+		return driver;
+	}
+	
 	private boolean checkTrue(boolean condition) {
 		boolean pass = true;
 		try {

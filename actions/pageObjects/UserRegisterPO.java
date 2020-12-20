@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
+import io.qameta.allure.Step;
 import pageUIs.UserRegisterPageUI;
 
 public class UserRegisterPO extends AbstractPage {
@@ -12,16 +13,19 @@ public class UserRegisterPO extends AbstractPage {
 		this.driver = driver;
 	}
 
+	@Step("Click to 'Gender Male' radio button")
 	public void clickToGenderMaleRadioButton() {
 		waitForElementClickable(driver, UserRegisterPageUI.GENDER_MALE_RADIO);
 		clickToElement(driver, UserRegisterPageUI.GENDER_MALE_RADIO);
 	}
 
+	@Step("Input data to 'Firstname' textbox")
 	public void sendkeyToFirstNameTextbox(String firstName) {
 		waitForElementVisible(driver, UserRegisterPageUI.FIRST_NAME_TEXTBOX);
 		sendkeyToElement(driver, UserRegisterPageUI.FIRST_NAME_TEXTBOX, firstName);
 	}
-
+	
+	@Step("Input data to 'Lastname' textbox")
 	public void sendkeyToLastNameTextbox(String lastName) {
 		waitForElementVisible(driver, UserRegisterPageUI.LAST_NAME_TEXTBOX);
 		sendkeyToElement(driver, UserRegisterPageUI.LAST_NAME_TEXTBOX, lastName);
@@ -41,7 +45,8 @@ public class UserRegisterPO extends AbstractPage {
 		waitForElementClickable(driver, UserRegisterPageUI.YEAR_DROPDOWN);
 		selectItemInDropdown(driver, UserRegisterPageUI.YEAR_DROPDOWN, year);
 	}
-
+	
+	@Step("Input to 'Email' textbox with value: {0}")
 	public void sendkeyToEmailextbox(String email) {
 		waitForElementVisible(driver, UserRegisterPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, UserRegisterPageUI.EMAIL_TEXTBOX, email);
@@ -53,11 +58,13 @@ public class UserRegisterPO extends AbstractPage {
 		sendkeyToElement(driver, UserRegisterPageUI.COMPANY_TEXTBOX, company);
 	}
 
+	@Step("Input to 'Password' textbox with value: {0}")
 	public void sendkeyToPasswordTextbox(String password) {
 		waitForElementVisible(driver, UserRegisterPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, UserRegisterPageUI.PASSWORD_TEXTBOX, password);
 	}
 
+	@Step("Input to 'Confirm Password' textbox with value: {0}")
 	public void sendkeyToConfirmPasswordTextbox(String password) {
 		waitForElementVisible(driver, UserRegisterPageUI.CONFIRM_PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, UserRegisterPageUI.CONFIRM_PASSWORD_TEXTBOX, password);

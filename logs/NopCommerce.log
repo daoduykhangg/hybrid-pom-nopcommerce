@@ -1,0 +1,462 @@
+[INFO ] [2020-12-19 21:10:38,118] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 21:10:38,124] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 21:10:38,219]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:10:38,223] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 21:10:38,282]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:10:38,282] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 21:10:39,965] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 21:10:40,220] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 21:10:40,372] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 21:10:40,430] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 21:10:41,126] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 21:10:41,427] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 21:10:41,756] Register - Step 11: Input to 'Email' textbox with value:duykhangkma790269@gmail.com
+[INFO ] [2020-12-19 21:10:41,847] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 21:10:41,897] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 21:10:41,990] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 21:10:44,529] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 21:10:44,581]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:10:44,581] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 21:10:47,162] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 21:10:48,460] Login - Step 02: Input to 'Email' textbox with value: duykhangkma790269@gmail.com
+[INFO ] [2020-12-19 21:10:48,533] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 21:10:48,594] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 21:10:50,592] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 21:10:50,653]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:10:50,653] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 21:10:50,695]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:10:50,696] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 21:11:00,754]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:11:00,755] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 21:11:10,834]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:11:10,834] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 21:11:10,925]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:12:47,963] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 21:12:47,968] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 21:12:48,053]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:12:48,055] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 21:12:48,103]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:12:48,103] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 21:12:49,657] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 21:12:49,909] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 21:12:50,015] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 21:12:50,067] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 21:12:50,345] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 21:12:50,642] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 21:12:50,955] Register - Step 11: Input to 'Email' textbox with value:duykhangkma678042@gmail.com
+[INFO ] [2020-12-19 21:12:51,029] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 21:12:51,082] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 21:12:51,178] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 21:12:53,688] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 21:12:53,742]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:12:53,742] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 21:12:56,274] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 21:12:56,800] Login - Step 02: Input to 'Email' textbox with value: duykhangkma678042@gmail.com
+[INFO ] [2020-12-19 21:12:56,865] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 21:12:56,936] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 21:12:58,627] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 21:12:58,695]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:12:58,695] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 21:12:58,771]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:12:58,771] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 21:13:08,865]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:13:08,865] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 21:13:18,933]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:13:18,933] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 21:13:19,055]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:15:16,617] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 21:15:16,620] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 21:15:16,701]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:15:16,702] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 21:15:16,758]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:15:16,758] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 21:15:18,735] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 21:15:19,040] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 21:15:19,139] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 21:15:19,186] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 21:15:19,454] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 21:15:19,724] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 21:15:20,001] Register - Step 11: Input to 'Email' textbox with value:duykhangkma547165@gmail.com
+[INFO ] [2020-12-19 21:15:20,089] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 21:15:20,145] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 21:15:20,232] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 21:15:22,596] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 21:15:22,653]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:15:22,653] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 21:15:25,238] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 21:15:25,735] Login - Step 02: Input to 'Email' textbox with value: duykhangkma547165@gmail.com
+[INFO ] [2020-12-19 21:15:25,806] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 21:15:25,856] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 21:15:26,736] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 21:15:26,801]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:15:26,801] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 21:15:26,881]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:15:26,881] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 21:15:36,968]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:15:36,969] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 21:15:47,030]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:15:47,031] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 21:15:47,158]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:23:09,825] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 21:23:09,828] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 21:23:09,910]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:23:09,911] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 21:23:09,960]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:23:09,960] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 21:23:11,518] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 21:23:11,782] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 21:23:11,884] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 21:23:11,944] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 21:23:12,231] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 21:23:12,544] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 21:23:12,819] Register - Step 11: Input to 'Email' textbox with value:duykhangkma708071@gmail.com
+[INFO ] [2020-12-19 21:23:12,893] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 21:23:12,941] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 21:23:13,023] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 21:23:14,839] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 21:23:14,890]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:23:14,890] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 21:23:15,841] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 21:23:17,121] Login - Step 02: Input to 'Email' textbox with value: duykhangkma708071@gmail.com
+[INFO ] [2020-12-19 21:23:17,186] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 21:23:17,235] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 21:23:18,135] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 21:23:18,188]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:23:18,188] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 21:23:18,232]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:23:18,232] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 21:23:28,290]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:23:28,290] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 21:23:38,353]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:23:38,353] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 21:23:38,465]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:26:47,074] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 21:26:47,079] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 21:26:47,184]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:26:47,218] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 21:26:47,270]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:26:47,270] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 21:26:48,818] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 21:26:49,082] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 21:26:49,156] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 21:26:49,203] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 21:26:49,495] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 21:26:49,780] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 21:26:50,049] Register - Step 11: Input to 'Email' textbox with value:duykhangkma733539@gmail.com
+[INFO ] [2020-12-19 21:26:50,137] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 21:26:50,195] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 21:26:50,288] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 21:26:51,928] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 21:26:51,981]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:26:51,981] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 21:26:53,647] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 21:26:54,138] Login - Step 02: Input to 'Email' textbox with value: duykhangkma733539@gmail.com
+[INFO ] [2020-12-19 21:26:54,205] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 21:26:54,251] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 21:26:56,789] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 21:26:56,851]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:26:56,851] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 21:26:56,895]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:26:56,895] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 21:27:06,965]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:27:06,965] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 21:27:17,026]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:27:17,027] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 21:27:17,139]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:27:24,801] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 21:27:24,801] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 21:27:24,864]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:27:24,864] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 21:27:24,910]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:27:24,910] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 21:27:28,408] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 21:27:28,491] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 21:27:29,148] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 21:27:29,805] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 21:27:29,920] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 21:27:30,018] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 21:27:30,115] Register - Step 11: Input to 'Email' textbox with value:duykhangkma725366@gmail.com
+[INFO ] [2020-12-19 21:27:30,789] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 21:27:31,494] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 21:27:32,856] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 21:27:35,334] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 21:27:35,393]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:27:35,393] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 21:27:37,416] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 21:27:38,739] Login - Step 02: Input to 'Email' textbox with value: duykhangkma725366@gmail.com
+[INFO ] [2020-12-19 21:27:39,404] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 21:27:40,118] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 21:27:41,138] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 21:27:41,190]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:27:41,190] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 21:27:41,236]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:27:41,236] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 21:27:51,358]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:27:51,358] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 21:28:01,426]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:28:01,427] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 21:28:01,524]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:37:07,425] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 21:37:07,436] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 21:37:07,575]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:07,611] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 21:37:07,666]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:07,666] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 21:37:09,707] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 21:37:09,977] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 21:37:10,053] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 21:37:10,103] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 21:37:10,386] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 21:37:10,720] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 21:37:11,043] Register - Step 11: Input to 'Email' textbox with value:duykhangkma23607@gmail.com
+[INFO ] [2020-12-19 21:37:11,135] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 21:37:11,192] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 21:37:11,317] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 21:37:12,332] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 21:37:12,387]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:12,387] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 21:37:14,174] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 21:37:15,460] Login - Step 02: Input to 'Email' textbox with value: duykhangkma23607@gmail.com
+[INFO ] [2020-12-19 21:37:15,535] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 21:37:15,586] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 21:37:16,535] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 21:37:16,599]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:16,600] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 21:37:16,645]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:16,645] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 21:37:26,721]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:26,722] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 21:37:36,763]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:36,764] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 21:37:36,875]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 21:37:43,787] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 21:37:43,787] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 21:37:43,852]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:43,852] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 21:37:43,897]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:43,897] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 21:37:48,350] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 21:37:48,434] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 21:37:49,056] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 21:37:49,664] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 21:37:49,765] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 21:37:49,860] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 21:37:49,962] Register - Step 11: Input to 'Email' textbox with value:duykhangkma292535@gmail.com
+[INFO ] [2020-12-19 21:37:50,582] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 21:37:51,204] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 21:37:52,542] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 21:37:54,946] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 21:37:54,998]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:37:54,999] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 21:37:56,663] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 21:37:57,937] Login - Step 02: Input to 'Email' textbox with value: duykhangkma292535@gmail.com
+[INFO ] [2020-12-19 21:37:58,592] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 21:37:59,286] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 21:38:01,034] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 21:38:01,085]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:38:01,085] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 21:38:01,126]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:38:01,127] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 21:38:11,212]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:38:11,212] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 21:38:21,351]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 21:38:21,352] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 21:38:21,455]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 22:58:21,132] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 22:58:21,135] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 22:58:21,274]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 22:58:21,276] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 22:58:21,326]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 22:58:21,326] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 22:58:25,634] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 22:58:25,723] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 22:58:26,417] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 22:58:27,031] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 22:58:27,143] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 22:58:27,253] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 22:58:27,351] Register - Step 11: Input to 'Email' textbox with value:duykhangkma275884@gmail.com
+[INFO ] [2020-12-19 22:58:27,974] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 22:58:28,608] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 22:58:29,837] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 22:58:32,257] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 22:58:32,310]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 22:58:32,310] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 22:58:33,296] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 22:58:33,806] Login - Step 02: Input to 'Email' textbox with value: duykhangkma275884@gmail.com
+[INFO ] [2020-12-19 22:58:34,444] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 22:58:35,129] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 22:58:37,770] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 22:58:37,819]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 22:58:37,819] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 22:58:37,860]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 22:58:37,860] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 22:58:47,995]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 22:58:47,996] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 22:58:58,082]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 22:58:58,082] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 22:58:58,178]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 23:10:38,034] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 23:10:38,037] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 23:10:38,127]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:10:38,129] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 23:10:38,180]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:10:38,180] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 23:10:42,457] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 23:10:42,561] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 23:10:43,179] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 23:10:43,801] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 23:10:43,911] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 23:10:44,010] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 23:10:44,110] Register - Step 11: Input to 'Email' textbox with value:duykhangkma255686@gmail.com
+[INFO ] [2020-12-19 23:10:44,737] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 23:10:45,370] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 23:10:46,594] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 23:10:48,395] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 23:10:48,450]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:10:48,450] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 23:10:51,104] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 23:10:51,706] Login - Step 02: Input to 'Email' textbox with value: duykhangkma255686@gmail.com
+[INFO ] [2020-12-19 23:10:52,335] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 23:10:52,984] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 23:10:55,615] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 23:10:55,667]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:10:55,667] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 23:10:55,711]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:10:55,711] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 23:11:05,841]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:11:05,841] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 23:11:15,901]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:11:15,901] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 23:11:15,964]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-19 23:16:54,980] Register - Step 01: Open Home Page
+[INFO ] [2020-12-19 23:16:54,984] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-19 23:16:55,106]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:16:55,107] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-19 23:16:55,155]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:16:55,155] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-19 23:16:59,589] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-19 23:16:59,684] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-19 23:17:00,385] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-19 23:17:01,031] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-19 23:17:01,166] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-19 23:17:01,326] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-19 23:17:01,437] Register - Step 11: Input to 'Email' textbox with value:duykhangkma24526@gmail.com
+[INFO ] [2020-12-19 23:17:02,103] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-19 23:17:02,786] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-19 23:17:04,142] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-19 23:17:05,912] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-19 23:17:05,970]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:17:05,970] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-19 23:17:07,681] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-19 23:17:08,171] Login - Step 02: Input to 'Email' textbox with value: duykhangkma24526@gmail.com
+[INFO ] [2020-12-19 23:17:08,798] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-19 23:17:09,485] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-19 23:17:11,355] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-19 23:17:11,405]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:17:11,405] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-19 23:17:11,453]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:17:11,453] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-19 23:17:21,548]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:17:21,548] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-19 23:17:31,652]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-19 23:17:31,653] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-19 23:17:31,717]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-20 11:45:30,474] Register - Step 01: Open Home Page
+[INFO ] [2020-12-20 11:45:30,479] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-20 11:45:30,582]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 11:45:30,584] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-20 11:45:30,638]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 11:45:30,639] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-20 11:45:33,978] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-20 11:45:34,057] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-20 11:45:34,672] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-20 11:45:35,274] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-20 11:45:35,379] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-20 11:45:35,477] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-20 11:45:35,568] Register - Step 11: Input to 'Email' textbox with value:duykhangkma443493@gmail.com
+[INFO ] [2020-12-20 11:45:36,260] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-20 11:45:36,884] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-20 11:45:38,229] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-20 11:45:41,692] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-20 11:45:41,742]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 11:45:41,742] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-20 11:45:43,821] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-20 11:45:44,364] Login - Step 02: Input to 'Email' textbox with value: duykhangkma443493@gmail.com
+[INFO ] [2020-12-20 11:45:44,986] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-20 11:45:45,639] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-20 11:45:48,492] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-20 11:45:48,540]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 11:45:48,540] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-20 11:45:48,584]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 11:45:48,584] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-20 11:45:58,667]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 11:45:58,667] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-20 11:46:08,755]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 11:46:08,755] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-20 11:46:08,843]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-20 12:11:42,657] Register - Step 01: Open Home Page
+[INFO ] [2020-12-20 12:11:42,662] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-20 12:11:42,791]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:11:42,793] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-20 12:11:42,847]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:11:42,847] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-20 12:11:46,263] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-20 12:11:46,355] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-20 12:11:47,004] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-20 12:11:47,679] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-20 12:11:47,812] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-20 12:11:47,917] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-20 12:11:48,020] Register - Step 11: Input to 'Email' textbox with value:duykhangkma96916@gmail.com
+[INFO ] [2020-12-20 12:11:48,656] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-20 12:11:49,284] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-20 12:11:50,519] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-20 12:11:53,071] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-20 12:11:53,125]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:11:53,126] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-20 12:11:55,879] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-20 12:11:57,133] Login - Step 02: Input to 'Email' textbox with value: duykhangkma96916@gmail.com
+[INFO ] [2020-12-20 12:11:57,804] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-20 12:11:58,429] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-20 12:11:59,334] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-20 12:11:59,384]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:11:59,384] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-20 12:11:59,429]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:11:59,429] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-20 12:12:09,586]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:12:09,587] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-20 12:12:19,689]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:12:19,689] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-20 12:12:19,803]  -------------------------- FAILED -------------------------- 
+[INFO ] [2020-12-20 12:38:23,389] Register - Step 01: Open Home Page
+[INFO ] [2020-12-20 12:38:23,394] Register - Step 02: Verify 'Register' link displayed
+[INFO ] [2020-12-20 12:38:23,539]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:38:23,542] Register - Step 03: Verify 'Lgoin' link displayed
+[INFO ] [2020-12-20 12:38:23,592]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:38:23,592] Register - Step 04: Click to 'Register' link at Home Page
+[INFO ] [2020-12-20 12:38:26,991] Register - Step 05: Click to 'Gender Male' radio button
+[INFO ] [2020-12-20 12:38:27,078] Register - Step 06: Input data to 'Firstname' textbox
+[INFO ] [2020-12-20 12:38:27,694] Register - Step 07: Input data to 'Lastname' textbox
+[INFO ] [2020-12-20 12:38:28,304] Register - Step 08: Select 'Date' dropdown
+[INFO ] [2020-12-20 12:38:28,412] Register - Step 09: Select 'Month' dropdown
+[INFO ] [2020-12-20 12:38:28,519] Register - Step 10: Select 'Year' dropdown
+[INFO ] [2020-12-20 12:38:28,614] Register - Step 11: Input to 'Email' textbox with value:duykhangkma409874@gmail.com
+[INFO ] [2020-12-20 12:38:29,251] Register - Step 12: Input data to 'Company' textbox
+[INFO ] [2020-12-20 12:38:29,871] Register - Step 13: Input to 'Password' textbox with value:123456
+[INFO ] [2020-12-20 12:38:31,093] Register - Step 14: Click to 'Register' button at Register Page
+[INFO ] [2020-12-20 12:38:34,129] Register - Step 15: Verify 'Register Success Message' displayed
+[INFO ] [2020-12-20 12:38:34,185]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:38:34,185] Register - Step 16: Click to 'Log out' link and navigate to Home Page
+[INFO ] [2020-12-20 12:38:37,105] Login - Step 01: Click to 'Login' link at Home Page
+[INFO ] [2020-12-20 12:38:37,632] Login - Step 02: Input to 'Email' textbox with value: duykhangkma409874@gmail.com
+[INFO ] [2020-12-20 12:38:38,253] Login - Step 03: Input to 'Password' textbox with value: 123456
+[INFO ] [2020-12-20 12:38:38,886] Login - Step 04: Click to 'Login' button at Login Page
+[INFO ] [2020-12-20 12:38:40,812] Login - Step 05: Verify 'My Account' link displayed
+[INFO ] [2020-12-20 12:38:40,864]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:38:40,865] Login - Step 06: Verify 'Log out' link displayed
+[INFO ] [2020-12-20 12:38:40,917]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:38:40,917] Login - Step 07: Verify 'Register' link Undisplayed
+[INFO ] [2020-12-20 12:38:51,027]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:38:51,027] Login - Step 08: Verify 'Login' link Undisplayed
+[INFO ] [2020-12-20 12:39:01,126]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-20 12:39:01,127] Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed
+[INFO ] [2020-12-20 12:39:01,238]  -------------------------- FAILED -------------------------- 
