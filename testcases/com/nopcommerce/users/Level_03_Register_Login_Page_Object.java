@@ -1,15 +1,5 @@
 package com.nopcommerce.users;
 
-import org.testng.annotations.Test;
-
-import commons.AbstractPage;
-import pageObjects.UserCustomerInforPO;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageObjects.UserRegisterPO;
-
-import org.testng.annotations.BeforeTest;
-
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import pageObjects.UserCustomerInforPO;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
+import pageObjects.UserRegisterPO;
 
 public class Level_03_Register_Login_Page_Object {
 	WebDriver driver;
@@ -25,7 +22,7 @@ public class Level_03_Register_Login_Page_Object {
 	String projectFolder = System.getProperty("user.dir");
 	String firstName, lastName, email, company, password;
 
-	@BeforeTest
+	@BeforeClass
 	public void beforeTest() {
 		System.setProperty("webdriver.gecko.driver", projectFolder + "\\browserDriver\\geckodriver.exe");
 		driver = new FirefoxDriver();
@@ -107,7 +104,7 @@ public class Level_03_Register_Login_Page_Object {
 		return rand.nextInt(999999);
 	}
 
-	@AfterTest
+	@AfterClass
 	public void afterTest() {
 		driver.quit();
 	}

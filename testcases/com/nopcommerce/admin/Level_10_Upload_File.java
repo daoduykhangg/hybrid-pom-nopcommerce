@@ -2,8 +2,8 @@ package com.nopcommerce.admin;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -22,7 +22,7 @@ public class Level_10_Upload_File extends AbstractTest {
 	String pictureOrder = "1";
 
 	@Parameters({ "browser", "url" })
-	@BeforeTest
+	@BeforeClass
 	public void beforeTest(String browserName, String urlValue) {
 		driver = getBrowserDriver(browserName, urlValue);
 
@@ -64,7 +64,7 @@ public class Level_10_Upload_File extends AbstractTest {
 		
 	}
 
-	@AfterTest
+	@AfterClass
 	public void afterTest() {
 		driver.quit();
 	}

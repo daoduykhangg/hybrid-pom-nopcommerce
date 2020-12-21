@@ -1,28 +1,22 @@
-package com.nopcommerce.users;
+package com.nopcommerce.common;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import pageObjects.PageGeneratorManager;
-import pageObjects.UserAddressesPO;
-import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
-import pageObjects.UserMyProductReviewPO;
-import pageObjects.UserOrdersPO;
 import pageObjects.UserRegisterPO;
-
-public class Level_13_Register_Login_Log_Report extends AbstractTest{
+public class common_01_Register extends AbstractTest{
 	WebDriver driver;
 	//Select select;
-	String firstName, lastName, email, company, password;
-
+	String firstName, lastName,company;
+	public static String email, password;
 	@Parameters("browser")
-	@BeforeClass
+	@BeforeTest
 	public void beforeTest(String browserName) {
 		driver = getBrowserDriver(browserName);
 		
@@ -31,10 +25,7 @@ public class Level_13_Register_Login_Log_Report extends AbstractTest{
 		email = "duykhangkma" + getRandomNumber() + "@gmail.com";
 		company = "DuyKhang KMA";
 		password = "123456";
-	}
-
-	@Test
-	public void TC_01_Register() {
+		
 		log.info("Register - Step 01: Open Home Page");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
@@ -80,50 +71,16 @@ public class Level_13_Register_Login_Log_Report extends AbstractTest{
 		
 		log.info("Register - Step 15: Verify 'Register Success Message' displayed");
 		verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
-
-		log.info("Register - Step 16: Click to 'Log out' link and navigate to Home Page");
-		homePage = registerPage.ClickToLogoutLink();
-	}
-
-	@Test
-	public void TC_02_Login() {
-		log.info("Login - Step 01: Click to 'Login' link at Home Page");
-		loginPage = homePage.clickToLoginLink();
-		log.info("Login - Step 02: Input to 'Email' textbox with value: " + email);
-		loginPage.sendkeyToEmailTextbox(email);
 		
-		log.info("Login - Step 03: Input to 'Password' textbox with value: " + password);
-		loginPage.sendkeyToPasswordTextbox(password);
-		
-		log.info("Login - Step 04: Click to 'Login' button at Login Page");
-		homePage = loginPage.clickToLoginButton();
-		
-		log.info("Login - Step 05: Verify 'My Account' link displayed");
-		verifyTrue(homePage.isMyAccountLinkDisplayed());
-		
-		log.info("Login - Step 06: Verify 'Log out' link displayed");
-		verifyTrue(homePage.isLogoutLinkDisplayed());
-		
-		log.info("Login - Step 07: Verify 'Register' link Undisplayed");
-		verifyTrue(homePage.isRegisterLinkUndisplayed());
-		
-		log.info("Login - Step 08: Verify 'Login' link Undisplayed");
-		verifyTrue(homePage.isLoginLinkUndisplayed());
-		
-		log.info("Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed");
-		verifyFalse(homePage.isShoppingCartNoItemTooltipUndisplayed());
-	}
-
-	@AfterClass
-	public void afterTest() {
 		driver.quit();
+	}
+
+	@AfterTest
+	public void afterTest() {
+		
 	}
 
 	UserHomePO homePage;
 	UserRegisterPO registerPage;
 	UserLoginPO loginPage;
-	UserCustomerInforPO customerInforPage;
-	UserAddressesPO addressesPage;
-	UserOrdersPO ordersPage;
-	UserMyProductReviewPO myProductReviewPage;
 }

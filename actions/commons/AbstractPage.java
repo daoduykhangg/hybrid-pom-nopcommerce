@@ -1,6 +1,5 @@
 package commons;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -16,12 +15,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
+import pageObjects.PageGeneratorManager;
 import pageObjects.UserAddressesPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserMyProductReviewPO;
 import pageObjects.UserOrdersPO;
-import pageObjects.PageGeneratorManager;
 import pageUIs.AbstractPageUI;
 
 

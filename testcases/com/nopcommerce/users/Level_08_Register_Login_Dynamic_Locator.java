@@ -2,19 +2,19 @@ package com.nopcommerce.users;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
+import pageObjects.PageGeneratorManager;
 import pageObjects.UserAddressesPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
 import pageObjects.UserMyProductReviewPO;
 import pageObjects.UserOrdersPO;
-import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 
 public class Level_08_Register_Login_Dynamic_Locator extends AbstractTest{
@@ -23,7 +23,7 @@ public class Level_08_Register_Login_Dynamic_Locator extends AbstractTest{
 	String firstName, lastName, email, company, password;
 
 	@Parameters("browser")
-	@BeforeTest
+	@BeforeClass
 	public void beforeTest(String browserName) {
 		driver = getBrowserDriver(browserName);
 		
@@ -143,7 +143,7 @@ public class Level_08_Register_Login_Dynamic_Locator extends AbstractTest{
 		customerInforPage = PageGeneratorManager.getUserCustomerInforPage(driver);
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void afterTest() {
 		driver.quit();
 	}

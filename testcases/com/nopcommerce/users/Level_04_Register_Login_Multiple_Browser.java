@@ -2,8 +2,8 @@ package com.nopcommerce.users;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -19,7 +19,7 @@ public class Level_04_Register_Login_Multiple_Browser extends AbstractTest{
 	String firstName, lastName, email, company, password;
 
 	@Parameters("browser")
-	@BeforeTest
+	@BeforeClass
 	public void beforeTest(String browserName) {
 		driver = getBrowserDriver(browserName);
 		
@@ -90,7 +90,7 @@ public class Level_04_Register_Login_Multiple_Browser extends AbstractTest{
 
 	}
 
-	@AfterTest
+	@AfterClass
 	public void afterTest() {
 		driver.quit();
 	}

@@ -2,8 +2,8 @@ package com.nopcommerce.admin;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -17,7 +17,7 @@ public class Level_09_Web_Data_Table extends AbstractTest {
 	WebDriver driver;
 
 	@Parameters({ "browser", "url" })
-	@BeforeTest
+	@BeforeClass
 	public void beforeTest(String browserName, String urlValue) {
 		driver = getBrowserDriver(browserName, urlValue);
 
@@ -102,7 +102,7 @@ public class Level_09_Web_Data_Table extends AbstractTest {
 		Assert.assertTrue(productsPage.isPublicStatusAtColumnNameAndRowNumber("Published", "1", "true"));
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void afterTest() {
 		driver.quit();
 	}
