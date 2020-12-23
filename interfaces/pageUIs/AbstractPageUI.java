@@ -11,4 +11,9 @@ public class AbstractPageUI {
 	public static final String PANEL_STATUS_BY_PANEL_ID = "//div[@id='%s']/div[contains(@class,'panel-heading')]";
 	public static final String UPLOAD_FILE_BY_PANELID_BUTTON = "//div[@id='%s']//input[@type='file']";
 	
+	public static final String DYNAMIC_RADIO_BUTTON_BY_ID = "//input[@id='gender-%s']";
+	public static final String DYNAMIC_TEXTBOX_BY_ID = "//input[@id='%s']";
+	public static final String DYNAMIC_DROPDOWN_BY_NAME = "//select[@name='%s']";
+	public static final String DYNAMIC_BUTTON_BY_VALUE = "//input[@value='%s']";
+	public static final String DYNAMIC_ERROR_MESSAGE_BY_ID = "//span[@class='field-validation-error']//span[@id='%s-error']";
 }

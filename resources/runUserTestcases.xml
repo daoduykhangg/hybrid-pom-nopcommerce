@@ -20,8 +20,7 @@
 	<test name="Run on CHROME UI">
 		<parameter name="browser" value="chrome_ui" />
 		<classes>
-			<class name="com.nopcommerce.users.Level_16_Reister_Login_Close_Browser_Part_I" />
-			<class name="com.nopcommerce.users.Level_16_Reister_Login_Close_Browser_Part_II" />
+			<class name="com.nopcommerce.users.Level_17_Register_Login_Pattern_Object" />
 		</classes>
 	</test>
 
