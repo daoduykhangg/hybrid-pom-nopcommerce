@@ -8,9 +8,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.UserHomePO;
-import pageObjects.PageGeneratorManager;
-import pageObjects.UserRegisterPO;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.UserHomePO;
+import pageObjects.nopCommerce.UserRegisterPO;
 
 public class Register extends AbstractTest {
 	WebDriver driver;

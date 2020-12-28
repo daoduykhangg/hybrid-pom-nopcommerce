@@ -9,9 +9,9 @@ import org.testng.annotations.Test;
 import com.nopcommerce.common.common_01_Register;
 
 import commons.AbstractTest;
-import pageObjects.PageGeneratorManager;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.UserHomePO;
+import pageObjects.nopCommerce.UserLoginPO;
 
 public class Level_16_Reister_Login_Close_Browser_Part_II extends AbstractTest{
 	WebDriver driver;

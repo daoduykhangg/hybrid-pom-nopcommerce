@@ -8,6 +8,8 @@ public class Topic_System_property {
 		
 		System.out.println(osName);
 		System.out.println(projectFolder);
+		System.out.println(java.time.LocalDate.now());  
+		
 	}
 
 }

@@ -8,11 +8,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.PageGeneratorManager;
-import pageObjects.UserCustomerInforPO;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageObjects.UserRegisterPO;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.UserCustomerInforPO;
+import pageObjects.nopCommerce.UserHomePO;
+import pageObjects.nopCommerce.UserLoginPO;
+import pageObjects.nopCommerce.UserRegisterPO;
 
 public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest{
 	WebDriver driver;

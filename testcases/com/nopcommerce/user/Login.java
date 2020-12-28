@@ -3,9 +3,9 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageObjects.PageGeneratorManager;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.UserHomePO;
+import pageObjects.nopCommerce.UserLoginPO;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;

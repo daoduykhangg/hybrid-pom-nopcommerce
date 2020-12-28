@@ -3,13 +3,13 @@ package com.nopcommerce.user;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.UserAddressesPO;
-import pageObjects.UserChangePasswordPagePO;
-import pageObjects.UserCustomerInforPO;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageUIs.UserHomePageUI;
-import pageObjects.PageGeneratorManager;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.UserAddressesPO;
+import pageObjects.nopCommerce.UserChangePasswordPagePO;
+import pageObjects.nopCommerce.UserCustomerInforPO;
+import pageObjects.nopCommerce.UserHomePO;
+import pageObjects.nopCommerce.UserLoginPO;
+import pageUIs.nopCommerce.UserHomePageUI;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;

@@ -8,10 +8,10 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractTest;
-import pageObjects.AdminDashBoardPagePO;
-import pageObjects.AdminLoginPagePO;
-import pageObjects.AdminProductsPagePO;
-import pageObjects.PageGeneratorManager;
+import pageObjects.nopCommerce.AdminDashBoardPagePO;
+import pageObjects.nopCommerce.AdminLoginPagePO;
+import pageObjects.nopCommerce.AdminProductsPagePO;
+import pageObjects.nopCommerce.PageGeneratorManager;
 
 public class Level_09_Web_Data_Table extends AbstractTest {
 	WebDriver driver;

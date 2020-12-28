@@ -6,10 +6,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import commons.AbstractTest;
-import pageObjects.PageGeneratorManager;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
-import pageObjects.UserRegisterPO;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.UserHomePO;
+import pageObjects.nopCommerce.UserLoginPO;
+import pageObjects.nopCommerce.UserRegisterPO;
 public class common_01_Register extends AbstractTest{
 	WebDriver driver;
 	//Select select;

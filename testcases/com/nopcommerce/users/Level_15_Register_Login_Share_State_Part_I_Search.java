@@ -9,9 +9,9 @@ import org.testng.annotations.Test;
 import com.nopcommerce.common.common_01_Register;
 
 import commons.AbstractTest;
-import pageObjects.PageGeneratorManager;
-import pageObjects.UserHomePO;
-import pageObjects.UserLoginPO;
+import pageObjects.nopCommerce.PageGeneratorManager;
+import pageObjects.nopCommerce.UserHomePO;
+import pageObjects.nopCommerce.UserLoginPO;
 
 public class Level_15_Register_Login_Share_State_Part_I_Search extends AbstractTest{
 	WebDriver driver;
