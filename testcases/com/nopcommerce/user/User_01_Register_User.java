@@ -12,7 +12,7 @@ import pageObjects.nopCommerce.PageGeneratorManager;
 import pageObjects.nopCommerce.UserHomePO;
 import pageObjects.nopCommerce.UserRegisterPO;
 
-public class Register extends AbstractTest {
+public class User_01_Register_User extends AbstractTest {
 	WebDriver driver;
 	String firstName, lastName, email, company, password, date, month, year;
 	String invaidEmail, existEmail, invalidPassword;

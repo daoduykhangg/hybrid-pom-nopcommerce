@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
-public class Login extends AbstractTest {
+public class User_02_Login_User extends AbstractTest {
 	WebDriver driver;
 	String invaidEmail, unregisteredEmail, invalidPassword;
 	String email, password;

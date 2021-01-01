@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
-public class MyAccount extends AbstractTest {
+public class User_03_Add_Edit_Info_User extends AbstractTest {
 	WebDriver driver;
 	String email, password, newPassword;
 	String date, month, year, company;

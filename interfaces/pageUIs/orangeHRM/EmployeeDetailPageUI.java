@@ -47,4 +47,7 @@ public class EmployeeDetailPageUI {
 	public static final String CURRENCY_DROPDOWN_AT_ADD_SALARY_COMPONENT_FORM = "//select[@id='salary_currency_id']";
 	public static final String AMOUNT_TEXTBOX_AT_ADD_SALARY_COMPONENT_FORM = "//input[@id='salary_basic_salary']";
 	public static final String COMMENTS_TEXTBOX_AT_ADD_SALARY_COMPONENT_FORM = "//textarea[@id='salary_comments']";
+	
+	public static final String SUPERVISOR_NAME_TEXTBOX_AT_ASSIGNED_SUPERVISORS_FORM = "//input[@id='reportto_supervisorName_empName']";
+	public static final String REPORTING_METHOD_DROPDOWN_AT_ASSIGNED_SUPERVISORS_FORM = "//select[@id='reportto_reportingMethodType']";
 }

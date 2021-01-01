@@ -240,7 +240,7 @@ public class AbstractPage {
 		return getElements(driver, locator).size();
 	}
 
-	public int countElementNumber(WebDriver driver, String locator, String values) {
+	public int countElementNumber(WebDriver driver, String locator, String... values) {
 		return getElements(driver, getDynamicLocator(locator, values)).size();
 	}
 
@@ -453,6 +453,12 @@ public class AbstractPage {
 		return false;
 	}
 
+	public String getHtml5ValidationMessage(WebDriver driver, String locator, String value) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		WebElement element = getElement(driver, locator);
+		return (String) jsExecutor.executeScript("return arguments[0].validationMessage;", element);
+	}
+	
 	public void waitForElementVisible(WebDriver driver, String locator) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
@@ -604,6 +610,17 @@ public class AbstractPage {
 	public void clickToButtonByNameAtFormHeader(WebDriver driver, String formHeader, String buttonName) {
 		waitForElementClickable(driver, OrangeHRMAbstractPageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, formHeader, buttonName);
 		clickToElement(driver, OrangeHRMAbstractPageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, formHeader, buttonName);
+	}
+	
+	public boolean isInformationDisplayedAtColumnNameAndRowNumber(WebDriver driver, String tableID, String columnName, String rowIndex, String expectedValue) {
+		int columnNameIndex = countElementNumber(driver, OrangeHRMAbstractPageUI.DYNAMIC_COLUMN_NAME_SIBLING, tableID, columnName) + 1;
+		String actualValue = getTextElement(driver, OrangeHRMAbstractPageUI.CELL_VALUE_MIX_BY_COLUMN_AND_ROW_INDEX, rowIndex, String.valueOf(columnNameIndex));		
+		return actualValue.equals(expectedValue);
+	}
+	
+	public boolean isNoRecordsFoundDisplayedAtTableId(WebDriver driver, String tableName) {
+		waitForElementVisible(driver, OrangeHRMAbstractPageUI.DYNAMIC_NO_RECORDS_FOUND_TEXT, tableName);
+		return isElementDisplayed(driver, OrangeHRMAbstractPageUI.DYNAMIC_NO_RECORDS_FOUND_TEXT, tableName);
 	}
 	
 	private WebElement element;

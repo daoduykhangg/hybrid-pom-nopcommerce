@@ -84,7 +84,7 @@ public class EmployeeDetailPageObject extends AbstractPage {
 		sendkeyToElement(driver, EmployeeDetailPageUI.DATE_OF_BIRTH_TEXTBOX_AT_PERSONAL_DETAIL_FORM, dateOfBirth);
 	}
 
-	public String getSuccessMessageAtPersonalDetailForm() {
+	public String getSuccessMessageAtEmployeeDetailForm() {
 		waitForElementVisible(driver, EmployeeDetailPageUI.SUCCESS_MESSAGE_AT_PERSONAL_DETAIL_FORM);
 		return getTextElement(driver, EmployeeDetailPageUI.SUCCESS_MESSAGE_AT_PERSONAL_DETAIL_FORM);
 	}
@@ -342,6 +342,17 @@ public class EmployeeDetailPageObject extends AbstractPage {
 	public boolean isNewContractFileUploadSuccess(String contractfilename) {
 		waitForElementVisible(driver, EmployeeDetailPageUI.CONTRACT_FILE_AT_JOB_FORM, contractfilename);
 		return isElementDisplayed(driver, EmployeeDetailPageUI.CONTRACT_FILE_AT_JOB_FORM, contractfilename);
+	}
+
+	public void enterToNameTextboxAtAssignedSupervisorsForm(String supervisorName) {
+		waitForElementVisible(driver, EmployeeDetailPageUI.SUPERVISOR_NAME_TEXTBOX_AT_ASSIGNED_SUPERVISORS_FORM);
+		sendkeyToElement(driver, EmployeeDetailPageUI.SUPERVISOR_NAME_TEXTBOX_AT_ASSIGNED_SUPERVISORS_FORM, supervisorName);
+	}
+
+	public void selectReportingMethodAtAssignedSupervisorsForm(String reportingMethod) {
+		waitForElementClickable(driver, EmployeeDetailPageUI.REPORTING_METHOD_DROPDOWN_AT_ASSIGNED_SUPERVISORS_FORM);
+		selectItemInDropdown(driver, EmployeeDetailPageUI.REPORTING_METHOD_DROPDOWN_AT_ASSIGNED_SUPERVISORS_FORM, reportingMethod);
+		
 	}
 
 }
