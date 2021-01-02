@@ -1,5 +1,10 @@
 package commons;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -330,6 +335,10 @@ public class AbstractPage {
 		action = new Actions(driver);
 		action.moveToElement(getElement(driver, locator)).perform();
 	}
+	public void hoverMouseToElement(WebDriver driver, String locator, String... values) {
+		action = new Actions(driver);
+		action.moveToElement(getElement(driver, getDynamicLocator(locator, values))).perform();
+	}
 
 	public void rightClickToElement(WebDriver driver, String locator) {
 		action = new Actions(driver);
@@ -468,6 +477,16 @@ public class AbstractPage {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(getDynamicLocator(locator, values))));
 	}
+	
+	public void waitForAllElementVisible(WebDriver driver, String locator) {
+		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(locator)));
+	}
+	
+	public void waitForAllElementVisible(WebDriver driver, String locator, String... values) {
+		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(getDynamicLocator(locator, values))));
+	}
 
 	public void waitForElementInvisible(WebDriver driver, String locator) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.SHORT_TIMEOUT);
@@ -485,8 +504,9 @@ public class AbstractPage {
 	}
 
 	public void waitForElementInvisible(WebDriver driver, String locator, String... values) {
-		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		explicitWait = new WebDriverWait(driver, GlobalConstants.SHORT_TIMEOUT);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(getDynamicLocator(locator, values))));
+		overideImplicitWait(driver, GlobalConstants.LONG_TIMEOUT);
 	}
 
 	public void waitForElementClickable(WebDriver driver, String locator) {
@@ -508,7 +528,117 @@ public class AbstractPage {
 		fullFileName = fullFileName.trim();
 		getElement(driver, OrangeHRMAbstractPageUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
 	}
-
+	
+	public boolean isDataStringSortedAscending(WebDriver driver, String locator) {
+		ArrayList<String> arrayList = new ArrayList<String>();
+		
+		List<WebElement> elementList = driver.findElements(getByXpath(locator));
+		for (WebElement element : elementList) {
+			arrayList.add(element.getText());
+		}
+		
+		ArrayList<String> sortList = new ArrayList<>();
+		for (String child : arrayList) {
+			sortList.add(child);
+		}
+		
+		Collections.sort(sortList);
+		
+		return sortList.equals(arrayList);
+	}
+	
+	public boolean isDataStringSortedDescending(WebDriver driver, String locator) {
+		ArrayList<String> arrayList = new ArrayList<String>();
+		
+		List<WebElement> elementList = driver.findElements(getByXpath(locator));
+		for (WebElement element : elementList) {
+			arrayList.add(element.getText());
+		}
+		
+		ArrayList<String> sortList = new ArrayList<>();
+		for (String child : arrayList) {
+			sortList.add(child);
+		}
+		
+		Collections.sort(sortList);
+		
+		Collections.reverse(sortList);
+		
+		return sortList.equals(arrayList);
+	}
+	
+	public boolean isDataFloatStringSortedAscending(WebDriver driver, String locator) {
+		ArrayList<Float> arrayList = new ArrayList<Float>();
+		
+		List<WebElement> elementList = driver.findElements(getByXpath(locator));
+		 
+		for (WebElement element : elementList) {
+			arrayList.add(Float.parseFloat(element.getText().replace("$", "").replace(",", "").trim()));
+		}
+		
+		ArrayList<Float> sortList = new ArrayList<Float>();
+		
+		for (Float child : arrayList) {
+			sortList.add(child);
+		}
+		
+		Collections.sort(sortList);
+		
+		return sortList.equals(arrayList);
+	}
+	
+	public boolean isDataFloatStringSortedDescending(WebDriver driver, String locator) {
+		ArrayList<Float> arrayList = new ArrayList<Float>();
+		
+		List<WebElement> elementList = driver.findElements(getByXpath(locator));
+		
+		for (WebElement element : elementList) {
+			arrayList.add(Float.parseFloat(element.getText().replace("$", "").replace(",", "").trim()));
+		}
+		
+		ArrayList<Float> sortList = new ArrayList<Float>();
+		
+		for (Float child : arrayList) {
+			sortList.add(child);
+		}
+		
+		Collections.sort(sortList);
+		
+		Collections.reverse(sortList);
+		
+		return sortList.equals(arrayList);
+	}
+	
+	public Date convertStringToDate(String datelnString) {
+		datelnString = datelnString.replace(",", "");
+		SimpleDateFormat formatter = new SimpleDateFormat("MMM dd yyyy");
+		Date date = null;
+		try {
+			date = formatter.parse(datelnString);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+	
+	public boolean isDataDateStringSortedDescending(WebDriver driver, String locator) {
+		ArrayList<Date> arrayList = new ArrayList<Date>();
+		
+		List<WebElement> elementList = driver.findElements(getByXpath(locator));
+		for (WebElement element : elementList) {
+			arrayList.add(convertStringToDate(element.getText()));
+		}
+		
+		ArrayList<Date> sortList = new ArrayList<Date>();
+		for (Date child : arrayList) {
+			sortList.add(child);
+		}
+		
+		Collections.sort(sortList);
+		
+		return sortList.equals(arrayList);
+	}
+	
 	/* NopCommerce project */
 	public UserAddressesPO clickToAddressesLink(WebDriver driver) {
 		waitForElementVisible(driver, NopcommerceAbstractPageUI.ADDRESSES_LINK);
@@ -599,6 +729,16 @@ public class AbstractPage {
 	public String getErrorMessageAtMandantoryfieldByID(WebDriver driver, String fieldID) {
 		waitForElementVisible(driver, NopcommerceAbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, fieldID);
 		return getTextElement(driver, NopcommerceAbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, fieldID);
+	}
+	
+	public void hoverToProductNamePageMenu(WebDriver driver, String productPage) {
+		waitForElementVisible(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
+		hoverMouseToElement(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
+	}
+
+	public void clickToProductNamePageMenu(WebDriver driver, String productPage) {
+		waitForElementVisible(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
+		clickToElement(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
 	}
 	
 	/* OrangeHRM project */

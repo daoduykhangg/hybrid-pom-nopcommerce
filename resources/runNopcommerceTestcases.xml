@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Nop commerce" parallel="false">
-  <test name="Run on FIREFOX UI">
- 	<parameter name="browser" value="firefox_ui"/>
-    <classes>
-    <class name="com.nopcommerce.user.MyAccount"/>
-    </classes>
-    </test>
-    
-<!--     <test name="Run on CHROME UI"> -->
-<!--     <parameter name="browser" value="chrome_ui"/> -->
+
+<listeners>
+		<listener class-name="commons.MethodListener" />
+		<!-- <listener class-name="reportConfig.ExtentListenerVersion2"/> -->
+		<!-- <listener class-name="reportConfig.ExtentListenerVersion3"/> -->
+		<listener class-name="reportConfig.ExtentListenerVersion4"/>
+		<listener class-name="reportConfig.AllureTestListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+<!--   <test name="Run on FIREFOX UI"> -->
+<!--  	<parameter name="browser" value="firefox_ui"/> -->
+<!--  	<parameter name="url" value="https://demo.nopcommerce.com/"/> -->
 <!--     <classes> -->
-<!--       <class name="com.nopcommerce.user.Register"/> -->
+<!--     <class name="com.nopcommerce.user.User_05_Sort_Product_By_Name_And_Price"/> -->
 <!--     </classes> -->
 <!--     </test> -->
+    
+    <test name="Run on CHROME UI">
+    <parameter name="browser" value="firefox_ui"/>
+ 	<parameter name="url" value="https://demo.nopcommerce.com/"/>
+    <classes>
+      <class name="com.nopcommerce.user.User_05_Sort_Product_By_Name_And_Price"/>
+    </classes>
+    </test>
     
 <!--     <test name="Run on FIREFOX HEADLESS"> -->
 <!--     <parameter name="browser" value="firefox_headless"/> -->

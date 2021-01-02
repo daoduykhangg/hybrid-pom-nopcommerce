@@ -65,7 +65,7 @@ public class AbstractTest {
 		}
 		driver.get("https://demo.nopcommerce.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		return driver;
 	}
 	

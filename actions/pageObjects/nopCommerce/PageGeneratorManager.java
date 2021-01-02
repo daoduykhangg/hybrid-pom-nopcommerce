@@ -46,4 +46,7 @@ public class PageGeneratorManager {
 	public static AdminProductsPagePO getAdminProductsPage(WebDriver driver) {
 		return new AdminProductsPagePO(driver);
 	}
+	public static UserProductsPO getUserProductsPage(WebDriver driver) {
+		return new UserProductsPO(driver);
+	}
 }

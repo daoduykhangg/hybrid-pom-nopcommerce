@@ -125,7 +125,7 @@ public class Employee_01_Add_Edit_Employee_User extends AbstractTest {
 		verifyEquals(employeeDetailPage.getEmployeeIDValueAtPersonalDetailForm(), employeeID);
 	}
 
-	@Test
+	@Test(dependsOnMethods = "Employee_01_Add_Employee")
 	public void Employee_02_Edit_Employee() {
 		log.info("Edit Employee [Personal] - Step 01: Click to 'Edit' button at 'Personal Details' Form");
 		employeeDetailPage.clickToButtonByNameAtFormHeader(driver, "Personal Details", "Edit");
@@ -179,7 +179,7 @@ public class Employee_01_Add_Edit_Employee_User extends AbstractTest {
 		verifyEquals(employeeDetailPage.getDateOfBirthValueAtPersonalDetailForm(), editDateOfBirth);
 	}
 
-	@Test
+	@Test(dependsOnMethods = "Employee_01_Add_Employee")
 	public void Employee_03_Edit_Employee_By_Contact() {
 		log.info("Edit Employee [Contact] - Step 01: Click to 'Contact deitals' tab");
 		employeeDetailPage.openSideBarTabByName("Contact Details");
@@ -261,7 +261,7 @@ public class Employee_01_Add_Edit_Employee_User extends AbstractTest {
 
 	}
 
-	@Test
+	@Test(dependsOnMethods = "Employee_01_Add_Employee")
 	public void Employee_04_Edit_Employee_By_Job() {
 		log.info("Edit Employee [Job] - Step 01: Click to 'Job' tab");
 		employeeDetailPage.openSideBarTabByName("Job");
@@ -331,7 +331,7 @@ public class Employee_01_Add_Edit_Employee_User extends AbstractTest {
 
 	}
 
-	@Test
+	@Test(dependsOnMethods = "Employee_01_Add_Employee")
 	public void Employee_05_Edit_Employee_By_Salary() {
 		log.info("Edit Employee [Salary] - Step 01: Click to 'Salary' Tab");
 		employeeDetailPage.openSideBarTabByName("Salary");
@@ -379,7 +379,7 @@ public class Employee_01_Add_Edit_Employee_User extends AbstractTest {
 		verifyTrue(employeeDetailPage.isInformationDisplayedAtColumnNameAndRowNumber(driver, "tblSalary", "Comments", "1", comments));
 	}
 
-	@Test
+	@Test(dependsOnMethods = "Employee_01_Add_Employee")
 	public void Employee_06_Edit_Employee_By_Report_To() {
 		log.info("Edit Employee [Report-to] - Step 01: Click to 'Report-to' tab");
 		employeeDetailPage.openSideBarTabByName("Report-to");
@@ -407,7 +407,7 @@ public class Employee_01_Add_Edit_Employee_User extends AbstractTest {
 
 	}
 
-	@Test
+	@Test(dependsOnMethods = {"Employee_01_Add_Employee", "Employee_02_Edit_Employee", "Employee_04_Edit_Employee_By_Job", "Employee_06_Edit_Employee_By_Report_To"})
 	public void Employee_07_Search_Employee() {
 		log.info("Search Employee - Step 01: Click to 'PIM' page menu");
 		employeeDetailPage.openMenuPageByName(driver, "PIM");

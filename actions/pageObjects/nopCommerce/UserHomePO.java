@@ -74,4 +74,5 @@ public class UserHomePO extends AbstractPage {
 		waitForElementInvisible(driver, UserHomePageUI.SHOPPING_CART_NO_ITEM_TOOLTIP);
 		return isElementUndisplayed(driver, UserHomePageUI.SHOPPING_CART_NO_ITEM_TOOLTIP);
 	}
+
 }

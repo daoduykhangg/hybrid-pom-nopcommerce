@@ -8,4 +8,5 @@ public class UserHomePageUI {
 	public static final String SHOPPING_CART_NO_ITEM_TOOLTIP = "//div[@class='count' and text()='You have no items in your shopping cart.']";
 	
 	public static final String ITEM_LINK_BY_PRODUCT_NAME = "//a[text()='%s']";
+	
 }
