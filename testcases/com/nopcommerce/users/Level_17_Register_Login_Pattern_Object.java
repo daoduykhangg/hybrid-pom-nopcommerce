@@ -134,9 +134,9 @@ public class Level_17_Register_Login_Pattern_Object extends AbstractTest{
 		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed());
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void afterTest() {
-		driver.quit();
+		closeBrowserAndDriver(driver);
 	}
 
 	UserHomePO homePage;

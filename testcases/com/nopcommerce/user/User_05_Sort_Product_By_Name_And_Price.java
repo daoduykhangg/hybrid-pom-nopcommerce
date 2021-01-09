@@ -101,9 +101,9 @@ public class User_05_Sort_Product_By_Name_And_Price extends AbstractTest {
 		verifyTrue(userProductsPage.isPagerUndisplayed());
 	}
 
-	@AfterTest
+	@AfterTest(alwaysRun = true)
 	public void afterTest() {
-		driver.quit();
+		closeBrowserAndDriver(driver);
 	}
 	UserProductsPO userProductsPage;
 	UserHomePO homePage;

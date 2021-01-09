@@ -1,17 +1,22 @@
 package commons;
 
+import java.io.File;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
@@ -34,12 +39,37 @@ public class AbstractTest {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser==Browser.FIREFOX_UI) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+//			FirefoxProfile profile = new FirefoxProfile();
+//			File file = new File(GlobalConstants.ROOT_FOLDER + "\\browserExtension\\adblocker_ultimate-3.7.10-an+fx.xpi");
+//			profile.addExtension(file);
+			FirefoxOptions options = new FirefoxOptions();
+//			options.addPreference("intl.accept_languages", "vi-VN");
+			options.addPreference("browser.download.folderList", "2");
+			options.addPreference("browser.download.dir", GlobalConstants.ROOT_FOLDER + "\\downloadFiles");
+			options.addPreference("browser.download.useDownloadDir", true);
+			options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
+			options.addPreference("pdfjs.disabled", true);
+			options.addArguments("--private");
+//			options.setProfile(profile);
+			driver = new FirefoxDriver(options);
 		} else if (browser==Browser.CHROME_UI) {
 			WebDriverManager.chromedriver().setup();
+			File file = new File(GlobalConstants.ROOT_FOLDER + "\\browserExtension\\extension_2_0_9_0.crx");
 			ChromeOptions options = new ChromeOptions();
+			HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+//			options.addArguments("--lang=vi");
+//			options.addArguments("--disable-extensions");
+//			options.addArguments("--disable-infobars");
+//			options.addArguments("--start-maximized");
+//			options.addArguments("--incognito");
+			options.addArguments("--disable-notifications");
+			options.addArguments("--disable-geolocation");
 			options.setExperimentalOption("useAutomationExtension", false);
 			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			options.addExtensions(file);
+			chromePrefs.put("profile.default_content_settings.popups", 0);
+			chromePrefs.put("download.default_directory", GlobalConstants.ROOT_FOLDER + "\\downloadFiles");
+			options.setExperimentalOption("prefs", chromePrefs);
 			driver = new ChromeDriver(options);
 		} else if (browser==Browser.FIREFOX_HEADLESS) {
 			WebDriverManager.firefoxdriver().setup();
@@ -53,12 +83,21 @@ public class AbstractTest {
 			options.addArguments("window-size=1920x1080");
 			driver = new ChromeDriver(options);
 		} else if (browser==Browser.EDGE_CHROMIUM) {
-			WebDriverManager.edgedriver().driverVersion("87.0.666.0").setup();
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
+		} else if (browser==Browser.EDGE_LEGACY) {
+			driver = new EdgeDriver();
+		}else if (browser==Browser.COCCOC) {
+			WebDriverManager.chromedriver().driverVersion("84.0.4147.30").setup();
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			options.setBinary("C:\\Users\\Khang KMA\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
+			driver = new ChromeDriver(options);
 		}  else if (browser==Browser.SAFARI) {
 			driver = new SafariDriver();
 		}  else if (browser==Browser.IE) {
-			WebDriverManager.edgedriver().arch32().setup();
+			WebDriverManager.iedriver().arch32().setup();
 			driver = new InternetExplorerDriver();
 		} else {
 			throw new RuntimeException("Please input valid browser name value!");
@@ -73,12 +112,37 @@ public class AbstractTest {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser==Browser.FIREFOX_UI) {
 			WebDriverManager.firefoxdriver().setup();
+			FirefoxProfile profile = new FirefoxProfile();
+			File file = new File(GlobalConstants.ROOT_FOLDER + "\\browserExtension\\adblocker_ultimate-3.7.10-an+fx.xpi");
+			profile.addExtension(file);
+			FirefoxOptions options = new FirefoxOptions();
+//			options.addPreference("intl.accept_languages", "vi-VN");
+			options.addPreference("browser.download.folderList", "2");
+			options.addPreference("browser.download.dir", GlobalConstants.ROOT_FOLDER + "\\downloadFiles");
+			options.addPreference("browser.download.useDownloadDir", true);
+			options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
+			options.addPreference("pdfjs.disabled", true);
+			options.addArguments("--private");
+			options.setProfile(profile);
 			driver = new FirefoxDriver();
 		} else if (browser==Browser.CHROME_UI) {
 			WebDriverManager.chromedriver().setup();
+			File file = new File(GlobalConstants.ROOT_FOLDER + "\\browserExtension\\extension_2_0_9_0.crx");
 			ChromeOptions options = new ChromeOptions();
+			HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+//			options.addArguments("--lang=vi");
+//			options.addArguments("--disable-extensions");
+//			options.addArguments("--disable-infobars");
+//			options.addArguments("--start-maximized");
+//			options.addArguments("--incognito");
+			options.addArguments("--disable-notifications");
+			options.addArguments("--disable-geolocation");
 			options.setExperimentalOption("useAutomationExtension", false);
 			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			options.addExtensions(file);
+			chromePrefs.put("profile.default_content_settings.popups", 0);
+			chromePrefs.put("download.default_directory", GlobalConstants.ROOT_FOLDER + "\\downloadFiles");
+			options.setExperimentalOption("prefs", chromePrefs);
 			driver = new ChromeDriver(options);
 		} else if (browser==Browser.FIREFOX_HEADLESS) {
 			WebDriverManager.firefoxdriver().setup();
@@ -92,9 +156,14 @@ public class AbstractTest {
 			options.addArguments("window-size=1920x1080");
 			driver = new ChromeDriver(options);
 		} else if (browser==Browser.EDGE_CHROMIUM) {
-			WebDriverManager.edgedriver().driverVersion("87.0.666.0").setup();
+			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-		}  else if (browser==Browser.SAFARI) {
+		} else if (browser==Browser.COCCOC) {
+			WebDriverManager.chromedriver().driverVersion("86.0.4240.22").setup();
+			ChromeOptions options = new ChromeOptions();
+			options.setBinary("C:\\Users\\Khang KMA\\AppData\\Local\\CocCoc\\Browser\\Application\\browser.exe");
+			driver = new ChromeDriver(options);
+		}else if (browser==Browser.SAFARI) {
 			driver = new SafariDriver();
 		}  else if (browser==Browser.IE) {
 			WebDriverManager.edgedriver().arch32().setup();
@@ -179,6 +248,28 @@ public class AbstractTest {
 		return checkEquals(actual, expected);
 	}
 	
+	protected String getCurrentDay() {
+		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
+		int day = nowUTC.getDayOfMonth();
+		return day + "";
+	}
+	
+	protected String getCurrentMonth() {
+		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
+		int month = nowUTC.getMonthOfYear();
+		return month + "";
+	}
+	
+	protected String getCurrentYear() {
+		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
+		int year = nowUTC.getYear();
+		return year + "";
+	}
+	
+	protected String getToday() {
+		return getCurrentMonth() + "/" + getCurrentDay() + "/" + getCurrentYear();
+	}
+	
 	protected void closeBrowserAndDriver(WebDriver driver) {
 		try {
 			// Get ra tên của OS và convert qua chữ thường
@@ -188,6 +279,7 @@ public class AbstractTest {
 			// Khai báo 1 biến command line để thực thi
 			String cmd = "";
 			if (driver != null) {
+				driver.manage().deleteAllCookies();
 				driver.quit();
 			}
 			

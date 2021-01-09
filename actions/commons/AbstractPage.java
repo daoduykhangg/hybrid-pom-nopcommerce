@@ -124,19 +124,31 @@ public class AbstractPage {
 	}
 
 	public void clickToElement(WebDriver driver, String locator) {
-		if (driver.toString().contains("edge")) {
+		if (driver.toString().contains("internet explorer")) {
+			clickToElementByJS(driver, locator);
+			sleepInSecond(3);
+		}else if (driver.toString().contains("edge") | driver.toString().contains("coccoc")) {
 			sleepInMiliSecond(500);
+			element = getElement(driver, locator);
+			element.click();
+		} else {
+			element = getElement(driver, locator);
+			element.click();
 		}
-		element = getElement(driver, locator);
-		element.click();
 	}
 
 	public void clickToElement(WebDriver driver, String locator, String... values) {
-		if (driver.toString().contains("edge")) {
+		if (driver.toString().contains("internet explorer")) {
+			clickToElementByJS(driver, getDynamicLocator(locator, values));
+			sleepInSecond(3);
+		}else if (driver.toString().contains("edge") | driver.toString().contains("coccoc")) {
 			sleepInMiliSecond(500);
+			element = getElement(driver, getDynamicLocator(locator, values));
+			element.click();
+		}else {
+			element = getElement(driver, getDynamicLocator(locator, values));
+			element.click();
 		}
-		element = getElement(driver, getDynamicLocator(locator, values));
-		element.click();
 	}
 
 	public void sendkeyToElement(WebDriver driver, String locator, String value) {
@@ -305,7 +317,7 @@ public class AbstractPage {
 	public boolean isElementDisplayed(WebDriver driver, String locator, String... values) {
 		return getElement(driver, getDynamicLocator(locator, values)).isDisplayed();
 	}
-	
+
 	public boolean isElementSelected(WebDriver driver, String locator, String... values) {
 		return getElement(driver, getDynamicLocator(locator, values)).isSelected();
 	}
@@ -335,6 +347,7 @@ public class AbstractPage {
 		action = new Actions(driver);
 		action.moveToElement(getElement(driver, locator)).perform();
 	}
+
 	public void hoverMouseToElement(WebDriver driver, String locator, String... values) {
 		action = new Actions(driver);
 		action.moveToElement(getElement(driver, getDynamicLocator(locator, values))).perform();
@@ -467,7 +480,7 @@ public class AbstractPage {
 		WebElement element = getElement(driver, locator);
 		return (String) jsExecutor.executeScript("return arguments[0].validationMessage;", element);
 	}
-	
+
 	public void waitForElementVisible(WebDriver driver, String locator) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
@@ -477,12 +490,12 @@ public class AbstractPage {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(getDynamicLocator(locator, values))));
 	}
-	
+
 	public void waitForAllElementVisible(WebDriver driver, String locator) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(locator)));
 	}
-	
+
 	public void waitForAllElementVisible(WebDriver driver, String locator, String... values) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(getDynamicLocator(locator, values))));
@@ -528,87 +541,87 @@ public class AbstractPage {
 		fullFileName = fullFileName.trim();
 		getElement(driver, OrangeHRMAbstractPageUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
 	}
-	
+
 	public boolean isDataStringSortedAscending(WebDriver driver, String locator) {
 		ArrayList<String> arrayList = new ArrayList<String>();
-		
+
 		List<WebElement> elementList = driver.findElements(getByXpath(locator));
 		for (WebElement element : elementList) {
 			arrayList.add(element.getText());
 		}
-		
+
 		ArrayList<String> sortList = new ArrayList<>();
 		for (String child : arrayList) {
 			sortList.add(child);
 		}
-		
+
 		Collections.sort(sortList);
-		
+
 		return sortList.equals(arrayList);
 	}
-	
+
 	public boolean isDataStringSortedDescending(WebDriver driver, String locator) {
 		ArrayList<String> arrayList = new ArrayList<String>();
-		
+
 		List<WebElement> elementList = driver.findElements(getByXpath(locator));
 		for (WebElement element : elementList) {
 			arrayList.add(element.getText());
 		}
-		
+
 		ArrayList<String> sortList = new ArrayList<>();
 		for (String child : arrayList) {
 			sortList.add(child);
 		}
-		
+
 		Collections.sort(sortList);
-		
+
 		Collections.reverse(sortList);
-		
+
 		return sortList.equals(arrayList);
 	}
-	
+
 	public boolean isDataFloatStringSortedAscending(WebDriver driver, String locator) {
 		ArrayList<Float> arrayList = new ArrayList<Float>();
-		
+
 		List<WebElement> elementList = driver.findElements(getByXpath(locator));
-		 
+
 		for (WebElement element : elementList) {
 			arrayList.add(Float.parseFloat(element.getText().replace("$", "").replace(",", "").trim()));
 		}
-		
+
 		ArrayList<Float> sortList = new ArrayList<Float>();
-		
+
 		for (Float child : arrayList) {
 			sortList.add(child);
 		}
-		
+
 		Collections.sort(sortList);
-		
+
 		return sortList.equals(arrayList);
 	}
-	
+
 	public boolean isDataFloatStringSortedDescending(WebDriver driver, String locator) {
 		ArrayList<Float> arrayList = new ArrayList<Float>();
-		
+
 		List<WebElement> elementList = driver.findElements(getByXpath(locator));
-		
+
 		for (WebElement element : elementList) {
 			arrayList.add(Float.parseFloat(element.getText().replace("$", "").replace(",", "").trim()));
 		}
-		
+
 		ArrayList<Float> sortList = new ArrayList<Float>();
-		
+
 		for (Float child : arrayList) {
 			sortList.add(child);
 		}
-		
+
 		Collections.sort(sortList);
-		
+
 		Collections.reverse(sortList);
-		
+
 		return sortList.equals(arrayList);
 	}
-	
+
 	public Date convertStringToDate(String datelnString) {
 		datelnString = datelnString.replace(",", "");
 		SimpleDateFormat formatter = new SimpleDateFormat("MMM dd yyyy");
@@ -620,25 +633,25 @@ public class AbstractPage {
 		}
 		return date;
 	}
-	
+
 	public boolean isDataDateStringSortedDescending(WebDriver driver, String locator) {
 		ArrayList<Date> arrayList = new ArrayList<Date>();
-		
+
 		List<WebElement> elementList = driver.findElements(getByXpath(locator));
 		for (WebElement element : elementList) {
 			arrayList.add(convertStringToDate(element.getText()));
 		}
-		
+
 		ArrayList<Date> sortList = new ArrayList<Date>();
 		for (Date child : arrayList) {
 			sortList.add(child);
 		}
-		
+
 		Collections.sort(sortList);
-		
+
 		return sortList.equals(arrayList);
 	}
-	
+
 	/* NopCommerce project */
 	public UserAddressesPO clickToAddressesLink(WebDriver driver) {
 		waitForElementVisible(driver, NopcommerceAbstractPageUI.ADDRESSES_LINK);
@@ -730,7 +743,7 @@ public class AbstractPage {
 		waitForElementVisible(driver, NopcommerceAbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, fieldID);
 		return getTextElement(driver, NopcommerceAbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, fieldID);
 	}
-	
+
 	public void hoverToProductNamePageMenu(WebDriver driver, String productPage) {
 		waitForElementVisible(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
 		hoverMouseToElement(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
@@ -740,29 +753,29 @@ public class AbstractPage {
 		waitForElementVisible(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
 		clickToElement(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
 	}
-	
+
 	/* OrangeHRM project */
 	public void openMenuPageByName(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, OrangeHRMAbstractPageUI.DYNAMIC_MENU_PAGE_BY_NAME, pageName);
 		clickToElement(driver, OrangeHRMAbstractPageUI.DYNAMIC_MENU_PAGE_BY_NAME, pageName);
 	}
-	
+
 	public void clickToButtonByNameAtFormHeader(WebDriver driver, String formHeader, String buttonName) {
 		waitForElementClickable(driver, OrangeHRMAbstractPageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, formHeader, buttonName);
 		clickToElement(driver, OrangeHRMAbstractPageUI.DYNAMIC_BUTTON_BY_NAME_AT_FORM_HEADER, formHeader, buttonName);
 	}
-	
+
 	public boolean isInformationDisplayedAtColumnNameAndRowNumber(WebDriver driver, String tableID, String columnName, String rowIndex, String expectedValue) {
 		int columnNameIndex = countElementNumber(driver, OrangeHRMAbstractPageUI.DYNAMIC_COLUMN_NAME_SIBLING, tableID, columnName) + 1;
-		String actualValue = getTextElement(driver, OrangeHRMAbstractPageUI.CELL_VALUE_MIX_BY_COLUMN_AND_ROW_INDEX, rowIndex, String.valueOf(columnNameIndex));		
+		String actualValue = getTextElement(driver, OrangeHRMAbstractPageUI.CELL_VALUE_MIX_BY_COLUMN_AND_ROW_INDEX, rowIndex, String.valueOf(columnNameIndex));
 		return actualValue.equals(expectedValue);
 	}
-	
+
 	public boolean isNoRecordsFoundDisplayedAtTableId(WebDriver driver, String tableName) {
 		waitForElementVisible(driver, OrangeHRMAbstractPageUI.DYNAMIC_NO_RECORDS_FOUND_TEXT, tableName);
 		return isElementDisplayed(driver, OrangeHRMAbstractPageUI.DYNAMIC_NO_RECORDS_FOUND_TEXT, tableName);
 	}
-	
+
 	private WebElement element;
 	private JavascriptExecutor jsExecutor;
 	private WebDriverWait explicitWait;
