@@ -134,7 +134,7 @@ public class Level_20_Register_Login_Manage_Data_II_Data_Driven extends Abstract
 		verifyTrue(homePage.isLoginLinkUndisplayed());
 
 		log.info("Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed");
-		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed(driver));
 	}
 
 	@AfterClass(alwaysRun = true)

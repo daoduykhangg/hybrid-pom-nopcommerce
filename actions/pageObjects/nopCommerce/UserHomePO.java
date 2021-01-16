@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import io.qameta.allure.Step;
+import pageUIs.nopCommerce.NopcommerceAbstractPageUI;
 import pageUIs.nopCommerce.UserHomePageUI;
 
 public class UserHomePO extends AbstractPage {
@@ -68,11 +69,4 @@ public class UserHomePO extends AbstractPage {
 		waitForElementInvisible(driver, UserHomePageUI.LOGIN_LINK);
 		return isElementUndisplayed(driver, UserHomePageUI.LOGIN_LINK);
 	}
-
-	@Step("Verify 'Shopping Cart No Item Tooltip' link Undisplayed")
-	public boolean isShoppingCartNoItemTooltipUndisplayed() {
-		waitForElementInvisible(driver, UserHomePageUI.SHOPPING_CART_NO_ITEM_TOOLTIP);
-		return isElementUndisplayed(driver, UserHomePageUI.SHOPPING_CART_NO_ITEM_TOOLTIP);
-	}
-
 }

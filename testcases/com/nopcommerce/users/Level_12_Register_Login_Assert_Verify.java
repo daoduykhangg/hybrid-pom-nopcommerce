@@ -75,7 +75,7 @@ public class Level_12_Register_Login_Assert_Verify extends AbstractTest{
 		
 		verifyTrue(homePage.isRegisterLinkUndisplayed());
 		verifyTrue(homePage.isLoginLinkUndisplayed());
-		verifyFalse(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		verifyFalse(homePage.isShoppingCartNoItemTooltipUndisplayed(driver));
 	}
 
 	@AfterClass

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Nop commerce - User" parallel="false">
+<suite name="OrangeHRM - Employee" parallel="false">
+
+	<parameter name="environment" value="test" />
 	<listeners>
 		<listener class-name="commons.MethodListener" />
 		<!-- <listener class-name="reportConfig.ExtentListenerVersion2"/> -->
 		<!-- <listener class-name="reportConfig.ExtentListenerVersion3"/> -->
-		<!-- <listener class-name="reportConfig.ExtentListenerVersion4"/> -->
+		<listener class-name="reportConfig.ExtentListenerVersion4" />
 		<listener class-name="reportConfig.AllureTestListener" />
 		<listener class-name="reportConfig.ReportNGListener" />
-		<listener class-name="retryConfig.RetryListener"/>
+		<listener class-name="retryConfig.RetryListener" />
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
@@ -15,23 +17,16 @@
 	<!-- <test name="Run on FIREFOX UI"> -->
 	<!-- <parameter name="browser" value="firefox_ui"/> -->
 	<!-- <classes> -->
-	<!-- <class name="com.nopcommerce.users.Level_18_Register_Login_Upgrade_Environment"/> -->
+	<!-- <class name="com.nopcommerce.users.Level_13_Register_Login_Log_Report"/> -->
 	<!-- </classes> -->
 	<!-- </test> -->
 
 	<test name="Run on CHROME UI">
 		<parameter name="browser" value="chrome_ui" />
 		<classes>
-			<class name="com.nopcommerce.users.Level_18_Register_Login_Upgrade_Environment" />
+			<class name="com.orangehrm.employee.Employee_01_Add_Edit_Employee_User_Environment" />
 		</classes>
 	</test>
-
-	<!-- <test name="Run on COC COC"> -->
-	<!-- <parameter name="browser" value="coccoc" /> -->
-	<!-- <classes> -->
-	<!-- <class name="com.nopcommerce.users.Level_18_Register_Login_Upgrade_Environment" /> -->
-	<!-- </classes> -->
-	<!-- </test> -->
 
 	<!-- <test name="Run on FIREFOX HEADLESS"> -->
 	<!-- <parameter name="browser" value="firefox_headless"/> -->
@@ -51,13 +46,6 @@
 	<!-- <parameter name="browser" value="edge_chromium"/> -->
 	<!-- <classes> -->
 	<!-- <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/> -->
-	<!-- </classes> -->
-	<!-- </test> -->
-
-	<!-- <test name="Run on IE"> -->
-	<!-- <parameter name="browser" value="ie" /> -->
-	<!-- <classes> -->
-	<!-- <class name="com.nopcommerce.users.Level_18_Register_Login_Upgrade_Environment" /> -->
 	<!-- </classes> -->
 	<!-- </test> -->
 </suite> <!-- Suite -->

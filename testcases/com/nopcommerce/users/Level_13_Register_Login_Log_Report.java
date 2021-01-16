@@ -111,7 +111,7 @@ public class Level_13_Register_Login_Log_Report extends AbstractTest{
 		verifyTrue(homePage.isLoginLinkUndisplayed());
 		
 		log.info("Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed");
-		verifyFalse(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		verifyFalse(homePage.isShoppingCartNoItemTooltipUndisplayed(driver));
 	}
 
 	@AfterClass

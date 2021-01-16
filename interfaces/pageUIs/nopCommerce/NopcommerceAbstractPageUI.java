@@ -19,5 +19,6 @@ public class NopcommerceAbstractPageUI {
 	public static final String DYNAMIC_ERROR_MESSAGE_BY_ID = "//span[@class='field-validation-error']//span[@id='%s-error']";
 	
 	public static final String DYNAMIC_PRODUCT_NAME_MENU_PAGE = "//ul[@class='top-menu notmobile']//a[text()='%s']";
+	public static final String SHOPPING_CART_NO_ITEM_TOOLTIP = "//div[@class='count' and text()='You have no items in your shopping cart.']";
 
 }

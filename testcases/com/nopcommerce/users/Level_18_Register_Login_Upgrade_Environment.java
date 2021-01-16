@@ -1,6 +1,7 @@
 package com.nopcommerce.users;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -113,7 +114,12 @@ public class Level_18_Register_Login_Upgrade_Environment extends AbstractTest {
 
 		log.info("Login - Step 03: Input to 'Password' textbox with value: " + password);
 		loginPage.inputToTextboxByID(driver, "Password", password);
-
+		
+		log.info("Register - Step 11: Verify 'Tooltip' displayed");
+		registerPage.sleepInSecond(5);
+		Assert.assertFalse(registerPage.isShoppingCartNoItemTooltipUndisplayed(driver));
+		
+		
 		log.info("Login - Step 04: Click to 'Login' button at Login Page");
 		loginPage.clickToButtonByValue(driver, "Log in");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
@@ -131,7 +137,7 @@ public class Level_18_Register_Login_Upgrade_Environment extends AbstractTest {
 		verifyTrue(homePage.isLoginLinkUndisplayed());
 
 		log.info("Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed");
-		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed(driver));
 	}
 
 	@AfterClass(alwaysRun = true)

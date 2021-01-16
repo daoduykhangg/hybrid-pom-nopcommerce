@@ -7,6 +7,8 @@
 		<!-- <listener class-name="reportConfig.ExtentListenerVersion3"/> -->
 		<listener class-name="reportConfig.ExtentListenerVersion4"/>
 		<listener class-name="reportConfig.AllureTestListener" />
+		<listener class-name="reportConfig.ReportNGListener" />
+		<listener class-name="retryConfig.RetryListener"/>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>

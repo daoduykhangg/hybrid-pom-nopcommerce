@@ -136,7 +136,7 @@ public class Level_19_Register_Login_Faker_Java extends AbstractTest {
 		verifyTrue(homePage.isLoginLinkUndisplayed());
 
 		log.info("Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed");
-		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed(driver));
 	}
 
 	@AfterClass(alwaysRun = true)

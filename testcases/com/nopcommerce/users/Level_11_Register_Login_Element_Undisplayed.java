@@ -75,7 +75,7 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest{
 		
 		Assert.assertTrue(homePage.isRegisterLinkUndisplayed());
 		Assert.assertTrue(homePage.isLoginLinkUndisplayed());
-		Assert.assertTrue(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		Assert.assertTrue(homePage.isShoppingCartNoItemTooltipUndisplayed(driver));
 	}
 
 	@AfterClass

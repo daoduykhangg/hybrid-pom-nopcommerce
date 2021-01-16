@@ -754,6 +754,10 @@ public class AbstractPage {
 		clickToElement(driver, NopcommerceAbstractPageUI.DYNAMIC_PRODUCT_NAME_MENU_PAGE, productPage);
 	}
 
+	public boolean isShoppingCartNoItemTooltipUndisplayed(WebDriver driver) {
+		waitForElementInvisible(driver, NopcommerceAbstractPageUI.SHOPPING_CART_NO_ITEM_TOOLTIP);
+		return isElementUndisplayed(driver, NopcommerceAbstractPageUI.SHOPPING_CART_NO_ITEM_TOOLTIP);
+	}
 	/* OrangeHRM project */
 	public void openMenuPageByName(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, OrangeHRMAbstractPageUI.DYNAMIC_MENU_PAGE_BY_NAME, pageName);

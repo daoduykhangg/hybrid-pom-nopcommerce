@@ -131,7 +131,7 @@ public class Level_17_Register_Login_Pattern_Object extends AbstractTest{
 		verifyTrue(homePage.isLoginLinkUndisplayed());
 		
 		log.info("Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed");
-		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		verifyTrue(homePage.isShoppingCartNoItemTooltipUndisplayed(driver));
 	}
 
 	@AfterClass(alwaysRun = true)

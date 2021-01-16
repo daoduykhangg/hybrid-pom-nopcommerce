@@ -119,7 +119,7 @@ public class Level_14_Register_Login_Allure_Report extends AbstractTest{
 		verifyTrue(homePage.isLoginLinkUndisplayed());
 		
 		log.info("Login - Step 09: Verify 'Shopping Cart No Item Tooltip' link Undisplayed");
-		verifyFalse(homePage.isShoppingCartNoItemTooltipUndisplayed());
+		verifyFalse(homePage.isShoppingCartNoItemTooltipUndisplayed(driver));
 	}
 
 	@AfterClass
