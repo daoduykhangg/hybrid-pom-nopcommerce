@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Nop commerce" parallel="false">
+<suite name="Nop commerce" parallel="false" thread-count="2">
 
 <listeners>
 		<listener class-name="commons.MethodListener" />
@@ -13,19 +13,24 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
-<!--   <test name="Run on FIREFOX UI"> -->
-<!--  	<parameter name="browser" value="firefox_ui"/> -->
-<!--  	<parameter name="url" value="https://demo.nopcommerce.com/"/> -->
-<!--     <classes> -->
-<!--     <class name="com.nopcommerce.user.User_05_Sort_Product_By_Name_And_Price"/> -->
-<!--     </classes> -->
-<!--     </test> -->
+	<parameter name="url" value="https://demo.nopcommerce.com/" />
+  <test name="Run on FIREFOX UI">
+ 	<parameter name="platform" value="WINDOWS"/>
+ 	<parameter name="browser" value="firefox_ui"/>
+ 	<parameter name="ip" value="192.168.1.121"/>
+ 	<parameter name="port" value="4321"/>
+    <classes>
+    <class name="com.nopcommerce.user.User_05_Sort_Product_By_Name_And_Price2"/>
+    </classes>
+    </test>
     
     <test name="Run on CHROME UI">
-    <parameter name="browser" value="firefox_ui"/>
- 	<parameter name="url" value="https://demo.nopcommerce.com/"/>
+ 	<parameter name="platform" value="WINDOWS"/>
+    <parameter name="browser" value="chrome_ui"/>
+    <parameter name="ip" value="192.168.1.121"/>
+ 	<parameter name="port" value="4321"/>
     <classes>
-      <class name="com.nopcommerce.user.User_05_Sort_Product_By_Name_And_Price"/>
+      <class name="com.nopcommerce.user.User_05_Sort_Product_By_Name_And_Price2"/>
     </classes>
     </test>
     

@@ -17,6 +17,7 @@ public class Faker_Data {
 		System.out.println(faker.address().fullAddress());
 		System.out.println(faker.address().zipCode());
 		System.out.println(faker.phoneNumber().cellPhone());
+		System.out.println(faker.business().creditCardNumber());
 	}
 
 }

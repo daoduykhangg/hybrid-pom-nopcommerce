@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Nop commerce" parallel="false" thread-count="2">
+
+	<listeners>
+		<listener class-name="commons.MethodListener" />
+		<!-- <listener class-name="reportConfig.ExtentListenerVersion2"/> -->
+		<!-- <listener class-name="reportConfig.ExtentListenerVersion3"/> -->
+		<listener class-name="reportConfig.ExtentListenerVersion4" />
+		<listener class-name="reportConfig.AllureTestListener" />
+		<listener class-name="reportConfig.ReportNGListener" />
+		<listener class-name="retryConfig.RetryListener" />
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+	<parameter name="url" value="https://demo.nopcommerce.com/" />
+	<test name="Run on Win 10 (FIREFOX UI)">
+		<parameter name="platform" value="Windows 10" />
+		<parameter name="browser" value="Firefox" />
+		<parameter name="browser_version" value="85" />
+		<classes>
+			<class name="com.nopcommerce.user.User_05_Sort_Product_By_Name_And_Price_Cross" />
+		</classes>
+	</test>
+
+	<test name="Run on Win 10 (CHROME UI)">
+		<parameter name="platform" value="Windows 10" />
+		<parameter name="browser" value="Chrome" />
+		<parameter name="browser_version" value="88" />
+		<classes>
+			<class name="com.nopcommerce.user.User_05_Sort_Product_By_Name_And_Price_Cross" />
+		</classes>
+	</test>
+
+	<!-- <test name="Run on FIREFOX HEADLESS"> -->
+	<!-- <parameter name="browser" value="firefox_headless"/> -->
+	<!-- <classes> -->
+	<!-- <class name="com.nopcommerce.user.Register"/> -->
+	<!-- </classes> -->
+	<!-- </test> -->
+
+	<!-- <test name="Run on CHROME HEADLESS"> -->
+	<!-- <parameter name="browser" value="chrome_headless"/> -->
+	<!-- <classes> -->
+	<!-- <class name="com.nopcommerce.user.Register"/> -->
+	<!-- </classes> -->
+	<!-- </test> -->
+
+	<!-- <test name="Run on EDGE UI"> -->
+	<!-- <parameter name="browser" value="edge_chromium"/> -->
+	<!-- <classes> -->
+	<!-- <class name="com.nopcommerce.user.Register"/> -->
+	<!-- </classes> -->
+	<!-- </test> -->
+</suite> <!-- Suite -->
